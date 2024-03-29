@@ -14,16 +14,16 @@
     "mongoose",
     "typescript"
   ],
-  "author": "P J Borowiecki",
+  "author": "Piotr Borowiecki",
   "type": "commonjs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pjborowiecki/mErn-Ccommerce-Full-Stack-with-TypeScript-Jwt-Authentication-Stripe-Redux-Tailwind-ShadcnUI-And-More"
+    "url": "https://github.com/pjborowiecki/mErn-Commerce-Full-Stack-with-TypeScript-Jwt-Authentication-Stripe-Redux-Tailwind-ShadcnUI-And-More"
   },
   "bugs": {
-    "url": "https://github.com/pjborowiecki/mErn-Ccommerce-Full-Stack-with-TypeScript-Jwt-Authentication-Stripe-Redux-Tailwind-ShadcnUI-And-More/issues"
+    "url": "https://github.com/pjborowiecki/mErn-Commerce-Full-Stack-with-TypeScript-Jwt-Authentication-Stripe-Redux-Tailwind-ShadcnUI-And-More/issues"
   },
-  "homepage": "https://github.com/pjborowiecki/mErn-Ccommerce-Full-Stack-with-TypeScript-Jwt-Authentication-Stripe-Redux-Tailwind-ShadcnUI-And-More",
+  "homepage": "https://github.com/pjborowiecki/mErn-Commerce-Full-Stack-with-TypeScript-Jwt-Authentication-Stripe-Redux-Tailwind-ShadcnUI-And-More",
   "main": "src/server.ts",
   "scripts": {
     "dev": "nodemon --exec ts-node './src/server.ts'",
