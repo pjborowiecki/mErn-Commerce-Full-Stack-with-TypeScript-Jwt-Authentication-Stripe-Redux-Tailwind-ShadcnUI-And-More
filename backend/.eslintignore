@@ -1,0 +1,11 @@
+node_modules
+dist
+
+yarn.lock
+yarn-error.log
+
+logs
+data
+coverage
+
+*.config.js

@@ -1,0 +1,86 @@
+{
+  "name": "mern-commerce",
+  "description": "",
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": [
+    "van-life",
+    "rest",
+    "rest-api",
+    "api",
+    "node",
+    "express",
+    "mongodb",
+    "mongoose",
+    "typescript"
+  ],
+  "author": "P J Borowiecki",
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pjborowiecki/mErn-Ccommerce-Full-Stack-with-TypeScript-Jwt-Authentication-Stripe-Redux-Tailwind-ShadcnUI-And-More"
+  },
+  "bugs": {
+    "url": "https://github.com/pjborowiecki/mErn-Ccommerce-Full-Stack-with-TypeScript-Jwt-Authentication-Stripe-Redux-Tailwind-ShadcnUI-And-More/issues"
+  },
+  "homepage": "https://github.com/pjborowiecki/mErn-Ccommerce-Full-Stack-with-TypeScript-Jwt-Authentication-Stripe-Redux-Tailwind-ShadcnUI-And-More",
+  "main": "src/server.ts",
+  "scripts": {
+    "dev": "nodemon --exec ts-node './src/server.ts'",
+    "build": "rm -rf dist/ && tsc --project './tsconfig.build.json'",
+    "start": "pnpm build && NODE_ENV=production node --trace-warnings './dist/server.js'",
+    "watch": "tsc --project './tsconfig.build.json' --watch",
+    "packages:update-all": "pnpm update --latest",
+    "prettier:format": "prettier --write \"**/*.{ts,tsx,cjs}\" --cache",
+    "prettier:check": "prettier --check \"**/*.{ts,tsx,cjs}\" --cache",
+    "lint": "eslint . --ext ts --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext ts --report-unused-disable-directives --max-warnings 0 --fix",
+    "test": "jest --config './jest.config.ts' --detectOpenHandles --coverage --maxWorkers=1",
+    "types:check": "tsc --project './tsconfig.json' --noEmit"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "concurrently": "^8.2.2",
+    "cookie-parser": "^1.4.6",
+    "cookie-session": "^2.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-async-errors": "^3.1.1",
+    "express-rate-limit": "^7.2.0",
+    "express-validator": "^7.0.1",
+    "helmet": "^7.1.0",
+    "joi": "^17.12.2",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.2.4",
+    "xss-shield": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.7.5",
+    "@types/cookie-parser": "^1.4.7",
+    "@types/cookie-session": "^2.0.48",
+    "@types/cors": "^2.8.17",
+    "@types/eslint": "^8.56.6",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.30",
+    "@types/supertest": "^6.0.2",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "cors\n": "link:@types/cors\n",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-security": "^2.1.1",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.0",
+    "prettier": "^3.2.5",
+    "supertest": "^6.3.4",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.3"
+  },
+  "engine": {
+    "node": ">=20.10.0"
+  }
+}
