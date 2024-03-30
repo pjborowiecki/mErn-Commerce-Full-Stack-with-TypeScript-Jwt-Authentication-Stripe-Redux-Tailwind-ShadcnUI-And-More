@@ -5,6 +5,6 @@ const links = {
 }
 
 export const siteConfig = {
-  name: "VanLife",
+  name: "mErnCommerce",
   links,
 }

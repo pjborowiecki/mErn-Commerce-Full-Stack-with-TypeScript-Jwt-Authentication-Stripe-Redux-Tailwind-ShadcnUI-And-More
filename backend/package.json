@@ -4,7 +4,9 @@
   "version": "1.0.0",
   "license": "MIT",
   "keywords": [
-    "van-life",
+    "mern-commerce",
+    "e-commerce",
+    "full-stack",
     "rest",
     "rest-api",
     "api",
@@ -12,7 +14,8 @@
     "express",
     "mongodb",
     "mongoose",
-    "typescript"
+    "typescript",
+    "react"
   ],
   "author": "Piotr Borowiecki",
   "type": "commonjs",
