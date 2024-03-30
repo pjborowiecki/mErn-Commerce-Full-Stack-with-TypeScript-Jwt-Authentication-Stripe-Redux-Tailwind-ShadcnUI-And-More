@@ -27,6 +27,6 @@
     "baseUrl": ".",
     "types": ["jest"]
   },
-  "include": ["src/**/*.ts", "test/**/*.ts"],
+  "include": ["src/**/*.ts", "test/**/*.ts", "src/db/seed-database.js"],
   "exclude": ["node_modules"]
 }

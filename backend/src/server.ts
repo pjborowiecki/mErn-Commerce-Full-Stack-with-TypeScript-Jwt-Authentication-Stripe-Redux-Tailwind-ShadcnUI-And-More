@@ -5,14 +5,12 @@ import { connectDatabase, disconnectDatabase } from "./db/connection"
 import { app } from "./app"
 
 const server = http.createServer(app)
-
 async function main() {
   try {
     await connectDatabase()
-    console.log("Database connected successfully")
     startServer()
   } catch (error) {
-    console.error("Error connecting to database: ", error)
+    console.error("Error starting the application: ", error)
     process.exit(1)
   }
 }
@@ -20,27 +18,33 @@ async function main() {
 function startServer() {
   server.listen(Number(config.server.port), () => {
     console.log(`Server running at ${config.server.protocol}://${config.server.hostname}:${config.server.port}`)
-    handleSignal("SIGTERM")
-    handleSignal("SIGINT")
+    handleSignals("SIGTERM")
+    handleSignals("SIGINT")
   })
 }
 
 export async function closeServer(): Promise<void> {
   console.log("Closing HTTP server")
-  return new Promise<void>((resolve, reject) => {
-    server.close((error) => {
-      if (error) {
-        console.error("Error closing server: ", error)
-        reject(error)
-      } else {
-        console.log("Server closed successfully")
-        resolve(disconnectDatabase())
-      }
+  try {
+    await new Promise<void>((resolve, reject) => {
+      server.close((error) => {
+        if (error) {
+          console.error("Error closing server: ", error)
+          reject(error)
+        } else {
+          console.log("Server closed successfully")
+          resolve()
+        }
+      })
     })
-  })
+  } catch (error) {
+    console.error("Error while closing server: ", error)
+  } finally {
+    await disconnectDatabase()
+  }
 }
 
-function handleSignal(signalName: string) {
+function handleSignals(signalName: string) {
   process.on(signalName, () => {
     console.log(`${signalName} signal received`)
     closeServer()
@@ -55,6 +59,6 @@ function handleSignal(signalName: string) {
 }
 
 main().catch((error) => {
-  console.error("Error starting server: ", error)
+  console.error("Error starting the application: ", error)
   process.exit(1)
 })

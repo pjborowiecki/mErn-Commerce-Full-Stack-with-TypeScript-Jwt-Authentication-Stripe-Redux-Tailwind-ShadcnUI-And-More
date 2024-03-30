@@ -33,6 +33,8 @@
     "build": "rm -rf dist/ && tsc --project './tsconfig.build.json'",
     "start": "pnpm build && NODE_ENV=production node --trace-warnings './dist/server.js'",
     "watch": "tsc --project './tsconfig.build.json' --watch",
+    "db:seed": "pnpm build && node './dist/db/seed-database.js'",
+    "db:clear": "pnpm build && node './dist/db/seed-database.js -c'",
     "packages:update-all": "pnpm update --latest",
     "prettier:format": "prettier --write \"**/*.{ts,tsx,cjs}\" --cache",
     "prettier:check": "prettier --check \"**/*.{ts,tsx,cjs}\" --cache",
@@ -42,6 +44,7 @@
     "types:check": "tsc --project './tsconfig.json' --noEmit"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",
     "concurrently": "^8.2.2",
     "cookie-parser": "^1.4.6",
@@ -59,6 +62,7 @@
     "xss-shield": "^1.0.1"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@types/compression": "^1.7.5",
     "@types/cookie-parser": "^1.4.7",
     "@types/cookie-session": "^2.0.48",

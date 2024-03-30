@@ -4,6 +4,7 @@ import { config } from "../config"
 export async function connectDatabase() {
   try {
     await mongoose.connect(String(config.database.url))
+    console.log("Database connected successfully")
   } catch (error) {
     console.error("Error connecting to database: ", error)
     throw error
