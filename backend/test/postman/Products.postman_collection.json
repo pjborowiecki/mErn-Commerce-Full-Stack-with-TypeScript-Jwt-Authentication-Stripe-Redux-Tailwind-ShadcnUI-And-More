@@ -24,7 +24,25 @@
 			"response": []
 		},
 		{
-			"name": "Get Product By Id",
+			"name": "Get Product By Id (Valid Id)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/products/66082c37049ad147d608d194",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products",
+						"66082c37049ad147d608d194"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product By Id (Invalid Id)",
 			"request": {
 				"method": "GET",
 				"header": [],

@@ -12,7 +12,7 @@ import { compressionOptions } from "./config/compression"
 import { xssOptions } from "./config/xss"
 
 import { logger } from "./middleware/logger.middleware"
-import { notFoundHandler } from "./middleware/not-found-handler.middleware"
+import { notFoundHandler, errorHandler } from "./middleware/error-handler.middleware"
 
 import { mainController } from "./controllers/v1/main.controller"
 import { authController } from "./controllers/v1/auth.controller"
@@ -35,5 +35,6 @@ app.use("/api/v1/auth", authController)
 app.use("/api/v1/products", productsController)
 
 app.use(notFoundHandler)
+app.use(errorHandler)
 
 export { app }
