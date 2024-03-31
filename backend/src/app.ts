@@ -10,11 +10,13 @@ import { corsOptions } from "./config/cors"
 import { cookieSessionOptions } from "./config/cookies"
 import { compressionOptions } from "./config/compression"
 import { xssOptions } from "./config/xss"
+
 import { logger } from "./middleware/logger.middleware"
-import { notFoundMiddleware } from "./middleware/not-found.middleware"
+import { notFoundHandler } from "./middleware/not-found-handler.middleware"
 
 import { mainController } from "./controllers/v1/main.controller"
 import { authController } from "./controllers/v1/auth.controller"
+import { productsController } from "./controllers/v1/products.controller"
 
 const app = express()
 
@@ -30,7 +32,8 @@ app.use(logger)
 
 app.use("/api/v1", mainController)
 app.use("/api/v1/auth", authController)
+app.use("/api/v1/products", productsController)
 
-app.use(notFoundMiddleware)
+app.use(notFoundHandler)
 
 export { app }

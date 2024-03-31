@@ -1,10 +1,12 @@
 import { Request, Response, NextFunction } from "express"
 
-export function logger(req: Request, res: Response, next: NextFunction) {
-  console.log(`Incomming - METHOD: [${req.method}] - URL: [${req.url}] - IP: [${req.socket.remoteAddress}]`)
+export function logger(request: Request, response: Response, next: NextFunction) {
+  console.log(`Incomming - METHOD: [${request.method}] - URL: [${request.url}] - IP: [${request.socket.remoteAddress}]`)
 
-  res.on("finish", () => {
-    console.log(`Result - METHOD: [${req.method}] - URL: [${req.url}] - IP: [${req.socket.remoteAddress}] - STATUS: [${res.statusCode}]`)
+  response.on("finish", () => {
+    console.log(
+      `Result - METHOD: [${request.method}] - URL: [${request.url}] - IP: [${request.socket.remoteAddress}] - STATUS: [${response.statusCode}]`
+    )
   })
 
   next()
