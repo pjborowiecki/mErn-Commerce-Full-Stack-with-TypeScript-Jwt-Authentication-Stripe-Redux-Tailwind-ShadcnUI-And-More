@@ -29,9 +29,9 @@ dependencies:
   express:
     specifier: ^4.19.2
     version: 4.19.2
-  express-async-errors:
-    specifier: ^3.1.1
-    version: 3.1.1(express@4.19.2)
+  express-async-handler:
+    specifier: ^1.2.0
+    version: 1.2.0
   express-rate-limit:
     specifier: ^7.2.0
     version: 7.2.0(express@4.19.2)
@@ -2181,12 +2181,8 @@ packages:
       jest-util: 29.7.0
     dev: true
 
-  /express-async-errors@3.1.1(express@4.19.2):
-    resolution: {integrity: sha512-h6aK1da4tpqWSbyCa3FxB/V6Ehd4EEB15zyQq9qe75OZBp0krinNKuH4rAY+S/U/2I36vdLAUFSjQJ+TFmODng==}
-    peerDependencies:
-      express: ^4.16.2
-    dependencies:
-      express: 4.19.2
+  /express-async-handler@1.2.0:
+    resolution: {integrity: sha512-rCSVtPXRmQSW8rmik/AIb2P0op6l7r1fMW538yyvTMltCO4xQEWMmobfrIxN2V1/mVrgxB8Az3reYF6yUZw37w==}
     dev: false
 
   /express-rate-limit@7.2.0(express@4.19.2):
