@@ -1,14 +1,13 @@
 import dotenv from "dotenv"
 
-import { connectDatabase, disconnectDatabase } from "./connection.js"
+import { connectDatabase, disconnectDatabase } from "../db/connection"
+import { User } from "../models/v1/user.model"
+import { Product } from "../models/v1/product.model"
+import { Review } from "../models/v1/review.model"
+import { Order } from "../models/v1/order.model"
 
-import { User } from "../models/v1/user.model.js"
-import { Product } from "../models/v1/product.model.js"
-import { Review } from "../models/v1/review.model.js"
-import { Order } from "../models/v1/order.model.js"
-
-import { dummyUsers } from "./dummy-users.js"
-import { dummyProducts } from "./dummy-products.js"
+import { dummyUsers } from "../db/dummy-users"
+import { dummyProducts } from "../db/dummy-products"
 
 dotenv.config()
 

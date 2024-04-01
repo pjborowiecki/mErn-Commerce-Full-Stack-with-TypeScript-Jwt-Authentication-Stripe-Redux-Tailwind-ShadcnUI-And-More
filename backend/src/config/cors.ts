@@ -1,5 +1,5 @@
 import { CorsOptions } from "cors"
-import { config } from "./index"
+import { config } from "../config"
 
 export const corsOptions: CorsOptions = {
   origin: `${config.client.protocol}://${config.client.hostname}:${config.client.port}`,
