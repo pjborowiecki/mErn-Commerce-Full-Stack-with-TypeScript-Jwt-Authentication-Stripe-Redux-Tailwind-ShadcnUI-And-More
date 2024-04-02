@@ -8,6 +8,8 @@ declare namespace NodeJS {
     readonly CLIENT_HOSTNAME: string
     readonly CLIENT_PORT: number
     readonly DATABASE_URL: string
-    readonly JWT_SIGN_KEY: string
+    readonly JWT_SIGNING_KEY: string
+    readonly JWT_EXPIRATION_TIME: string
+    readonly JWT_EXPIRATION_TIME_IN_MS: number
   }
 }

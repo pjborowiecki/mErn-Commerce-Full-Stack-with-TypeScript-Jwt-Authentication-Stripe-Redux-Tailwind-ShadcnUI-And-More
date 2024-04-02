@@ -57,7 +57,11 @@ export async function clearDatabase(): Promise<void> {
 }
 
 if (process.argv[2] === "-c") {
-  clearDatabase().catch((error) => console.error("Error seeding the database: ", error))
+  clearDatabase().catch((error) =>
+    console.error("Error seeding the database: ", error)
+  )
 } else {
-  seedDatabase().catch((error) => console.error("error clearing the database: ", error))
+  seedDatabase().catch((error) =>
+    console.error("error clearing the database: ", error)
+  )
 }

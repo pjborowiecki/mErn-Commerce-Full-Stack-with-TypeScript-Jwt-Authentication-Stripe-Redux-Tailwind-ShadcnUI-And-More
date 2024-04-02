@@ -9,18 +9,28 @@ const authController: Router = express.Router()
 
 authController.route("/signup").post(authService.signUp)
 
-authController.route("/signin").post(authValidator.signIn, requestValidator, asyncHandler(authService.signIn))
+authController
+  .route("/signin")
+  .post(
+    authValidator.signIn,
+    requestValidator,
+    asyncHandler(authService.signIn)
+  )
 
 authController.route("/signout").post(authService.signOut)
 
 authController.route("/users").get(authService.getAllUsers)
 
-authController.route("/users/:id").get(authService.getUserById)
-authController.route("/users/:id").put(authService.updateUserById)
-authController.route("/users/:id").delete(authService.deleteUserById)
+authController
+  .route("/users/:id")
+  .get(authService.getUserById)
+  .put(authService.updateUserById)
+  .delete(authService.deleteUserById)
 
-authController.route("/users/current-user").get(authService.getCurrentUser)
-authController.route("/users/current-user").put(authService.updateCurrentUser)
-authController.route("/users/current-user").delete(authService.deleteUserById)
+authController
+  .route("/users/current-user")
+  .get(authService.getCurrentUser)
+  .put(authService.updateCurrentUser)
+  .delete(authService.deleteUserById)
 
 export { authController }

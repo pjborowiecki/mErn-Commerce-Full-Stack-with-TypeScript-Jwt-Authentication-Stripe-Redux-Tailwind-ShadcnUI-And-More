@@ -12,7 +12,10 @@ import { compressionOptions } from "./config/compression"
 import { xssOptions } from "./config/xss"
 
 import { logger } from "./middleware/logger.middleware"
-import { notFoundHandler, errorHandler } from "./middleware/error-handler.middleware"
+import {
+  notFoundHandler,
+  errorHandler,
+} from "./middleware/error-handler.middleware"
 
 import { mainController } from "./controllers/v1/main.controller"
 import { authController } from "./controllers/v1/auth.controller"

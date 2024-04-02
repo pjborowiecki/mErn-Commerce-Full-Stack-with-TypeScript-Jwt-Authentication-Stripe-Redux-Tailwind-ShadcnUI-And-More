@@ -1,7 +1,8 @@
 export const dummyProducts = [
   {
     name: "Pentax K1000",
-    description: "The Pentax K1000 is a 35 mm single-lens reflex camera, launched in 1976 by Asahi Optical Co., Ltd.",
+    description:
+      "The Pentax K1000 is a 35 mm single-lens reflex camera, launched in 1976 by Asahi Optical Co., Ltd.",
     image: "/images/pentax-k1000.jpg",
     brand: "Pentax",
     category: "Cameras",
@@ -12,7 +13,8 @@ export const dummyProducts = [
   },
   {
     name: "Olympus OM-1",
-    description: "The Olympus OM-1 is a single-lens reflex camera introduced in 1972.",
+    description:
+      "The Olympus OM-1 is a single-lens reflex camera introduced in 1972.",
     image: "/images/olympus-om-1.jpg",
     brand: "Olympus",
     category: "Cameras",
@@ -23,7 +25,8 @@ export const dummyProducts = [
   },
   {
     name: "Minolta X-700",
-    description: "The Minolta X-700 is a 35 mm single-lens reflex film camera introduced by Minolta in 1981.",
+    description:
+      "The Minolta X-700 is a 35 mm single-lens reflex film camera introduced by Minolta in 1981.",
     image: "/images/minolta-x700.jpg",
     brand: "Minolta",
     category: "Cameras",
@@ -34,7 +37,8 @@ export const dummyProducts = [
   },
   {
     name: "Yashica Electro 35",
-    description: "The Yashica Electro 35 is a rangefinder camera made by Yashica.",
+    description:
+      "The Yashica Electro 35 is a rangefinder camera made by Yashica.",
     image: "/images/yashica-electro-35.jpg",
     brand: "Yashica",
     category: "Cameras",
@@ -45,7 +49,8 @@ export const dummyProducts = [
   },
   {
     name: "Canon A-1",
-    description: "The Canon A-1 is a 35 mm single-lens reflex camera that was introduced by Canon in 1978.",
+    description:
+      "The Canon A-1 is a 35 mm single-lens reflex camera that was introduced by Canon in 1978.",
     image: "/images/canon-a1.jpg",
     brand: "Canon",
     category: "Cameras",
@@ -56,7 +61,8 @@ export const dummyProducts = [
   },
   {
     name: "Nikon FM2",
-    description: "The Nikon FM2 is an advanced semi-professional, interchangeable lens, 35 mm film, single-lens reflex (SLR) camera.",
+    description:
+      "The Nikon FM2 is an advanced semi-professional, interchangeable lens, 35 mm film, single-lens reflex (SLR) camera.",
     image: "/images/nikon-fm2.jpg",
     brand: "Nikon",
     category: "Cameras",
@@ -67,7 +73,8 @@ export const dummyProducts = [
   },
   {
     name: "Leica M3",
-    description: "The Leica M3 is a 35 mm rangefinder camera by Ernst Leitz GmbH, introduced in 1954.",
+    description:
+      "The Leica M3 is a 35 mm rangefinder camera by Ernst Leitz GmbH, introduced in 1954.",
     image: "/images/leica-m3.jpg",
     brand: "Leica",
     category: "Cameras",
@@ -78,7 +85,8 @@ export const dummyProducts = [
   },
   {
     name: "Kodak Retina IIa",
-    description: "The Retina IIa is a 35mm viewfinder camera made by Kodak AG in Germany.",
+    description:
+      "The Retina IIa is a 35mm viewfinder camera made by Kodak AG in Germany.",
     image: "/images/kodak-retina-iia.jpg",
     brand: "Kodak",
     category: "Vintage Cameras",
@@ -89,7 +97,8 @@ export const dummyProducts = [
   },
   {
     name: "Polaroid SX-70",
-    description: "The Polaroid SX-70 is a folding single lens reflex Land camera which was produced by Polaroid Corporation from 1972 to 1981.",
+    description:
+      "The Polaroid SX-70 is a folding single lens reflex Land camera which was produced by Polaroid Corporation from 1972 to 1981.",
     image: "/images/polaroid-sx70.jpg",
     brand: "Polaroid",
     category: "Cameras",
@@ -100,7 +109,8 @@ export const dummyProducts = [
   },
   {
     name: "Rolleiflex 2.8F",
-    description: "The Rolleiflex 2.8F is a twin-lens reflex camera made by Rollei.",
+    description:
+      "The Rolleiflex 2.8F is a twin-lens reflex camera made by Rollei.",
     image: "/images/rolleiflex-28f.jpg",
     brand: "Rolleiflex",
     category: "Cameras",
@@ -111,7 +121,8 @@ export const dummyProducts = [
   },
   {
     name: "Zeiss Ikon Contax II",
-    description: "The Zeiss Ikon Contax II is a 35mm rangefinder camera built by Zeiss Ikon from 1936 to 1942.",
+    description:
+      "The Zeiss Ikon Contax II is a 35mm rangefinder camera built by Zeiss Ikon from 1936 to 1942.",
     image: "/images/zeiss-ikon-contax-ii.jpg",
     brand: "Zeiss Ikon",
     category: "Cameras",
@@ -122,7 +133,8 @@ export const dummyProducts = [
   },
   {
     name: "Voigtländer Bessa",
-    description: "The Voigtländer Bessa is a line of medium format and 35mm film cameras manufactured by Voigtländer.",
+    description:
+      "The Voigtländer Bessa is a line of medium format and 35mm film cameras manufactured by Voigtländer.",
     image: "/images/voigtlander-bessa.jpg",
     brand: "Voigtländer",
     category: "Cameras",
@@ -133,7 +145,8 @@ export const dummyProducts = [
   },
   {
     name: "Argus C3",
-    description: "The Argus C3 is a 35mm film rangefinder camera manufactured by Argus.",
+    description:
+      "The Argus C3 is a 35mm film rangefinder camera manufactured by Argus.",
     image: "/images/argus-c3.jpg",
     brand: "Argus",
     category: "Cameras",
@@ -144,7 +157,8 @@ export const dummyProducts = [
   },
   {
     name: "Konica Auto S3",
-    description: "The Konica Auto S3 is a 35mm fixed-lens, leaf-shuttered, rangefinder camera.",
+    description:
+      "The Konica Auto S3 is a 35mm fixed-lens, leaf-shuttered, rangefinder camera.",
     image: "/images/konica-auto-s3.jpg",
     brand: "Konica",
     category: "Vintage Cameras",
@@ -155,7 +169,8 @@ export const dummyProducts = [
   },
   {
     name: "Ansel Adams: 400 Photographs",
-    description: "A collection of iconic photographs by Ansel Adams, showcasing his mastery of black-and-white landscape photography.",
+    description:
+      "A collection of iconic photographs by Ansel Adams, showcasing his mastery of black-and-white landscape photography.",
     image: "/images/ansel-adams-400-photographs.jpg",
     brand: "Ansel Adams",
     category: "Books",
@@ -166,7 +181,8 @@ export const dummyProducts = [
   },
   {
     name: "Understanding Exposure",
-    description: "A comprehensive guide to understanding exposure in photography, covering aperture, shutter speed, and ISO.",
+    description:
+      "A comprehensive guide to understanding exposure in photography, covering aperture, shutter speed, and ISO.",
     image: "/images/understanding-exposure.jpg",
     brand: "Bryan Peterson",
     category: "Books",
@@ -177,7 +193,8 @@ export const dummyProducts = [
   },
   {
     name: "The Camera",
-    description: "A classic photography book exploring the history and technical aspects of the camera.",
+    description:
+      "A classic photography book exploring the history and technical aspects of the camera.",
     image: "/images/the-camera.jpg",
     brand: "Ansel Adams",
     category: "Books",
@@ -188,7 +205,8 @@ export const dummyProducts = [
   },
   {
     name: "Magnum Contact Sheets",
-    description: "A fascinating look at the contact sheets of Magnum photographers, revealing the process behind iconic images.",
+    description:
+      "A fascinating look at the contact sheets of Magnum photographers, revealing the process behind iconic images.",
     image: "/images/magnum-contact-sheets.jpg",
     brand: "Magnum Photos",
     category: "Books",
@@ -210,7 +228,8 @@ export const dummyProducts = [
   },
   {
     name: "Camera Lens Cleaning Kit",
-    description: "Professional camera lens cleaning kit with lens cleaner, brush, and microfiber cloth.",
+    description:
+      "Professional camera lens cleaning kit with lens cleaner, brush, and microfiber cloth.",
     image: "/images/camera-lens-cleaning-kit.jpg",
     brand: "Camera Care Co.",
     category: "Accessories",
@@ -232,7 +251,8 @@ export const dummyProducts = [
   },
   {
     name: "Camera Bag",
-    description: "Vintage canvas camera bag with padded interior and adjustable dividers.",
+    description:
+      "Vintage canvas camera bag with padded interior and adjustable dividers.",
     image: "/images/camera-bag.jpg",
     brand: "RetroGear",
     category: "Accessories",
@@ -243,7 +263,8 @@ export const dummyProducts = [
   },
   {
     name: "Life Magazine",
-    description: "An iconic weekly news magazine known for its stunning photojournalism, published from 1936 to 1972.",
+    description:
+      "An iconic weekly news magazine known for its stunning photojournalism, published from 1936 to 1972.",
     image: "/images/life-magazine.jpg",
     brand: "Time Inc.",
     category: "Magazines",
@@ -254,7 +275,8 @@ export const dummyProducts = [
   },
   {
     name: "National Geographic Magazine",
-    description: "A renowned monthly magazine showcasing the world's wonders through captivating photography, founded in 1888.",
+    description:
+      "A renowned monthly magazine showcasing the world's wonders through captivating photography, founded in 1888.",
     image: "/images/national-geographic-magazine.jpg",
     brand: "National Geographic Society",
     category: "Magazines",
@@ -265,7 +287,8 @@ export const dummyProducts = [
   },
   {
     name: "Popular Photography",
-    description: "A popular photography magazine providing tips, techniques, and gear reviews, published from 1937 to 2017.",
+    description:
+      "A popular photography magazine providing tips, techniques, and gear reviews, published from 1937 to 2017.",
     image: "/images/popular-photography-magazine.jpg",
     brand: "Popular Photography",
     category: "Magazines",
@@ -276,7 +299,8 @@ export const dummyProducts = [
   },
   {
     name: "Vintage Travel Postcards",
-    description: "A collection of vintage travel postcards featuring scenic destinations from around the world.",
+    description:
+      "A collection of vintage travel postcards featuring scenic destinations from around the world.",
     image: "/images/vintage-travel-postcards.jpg",
     brand: "VTP",
     category: "Postcards",
@@ -287,7 +311,8 @@ export const dummyProducts = [
   },
   {
     name: "Vintage Portrait Postcards",
-    description: "A set of vintage portrait postcards featuring classic portraits from the early 20th century.",
+    description:
+      "A set of vintage portrait postcards featuring classic portraits from the early 20th century.",
     image: "/images/vintage-portrait-postcards.jpg",
     brand: "VTP",
     category: "Postcards",
@@ -298,7 +323,8 @@ export const dummyProducts = [
   },
   {
     name: "Vintage City Postcards",
-    description: "A collection of vintage city postcards showcasing urban scenes from the past century.",
+    description:
+      "A collection of vintage city postcards showcasing urban scenes from the past century.",
     image: "/images/vintage-city-postcards.jpg",
     brand: "VTP",
     category: "Postcards",
@@ -309,7 +335,8 @@ export const dummyProducts = [
   },
   {
     name: "Carl Zeiss Jena Biotar 58mm f/2",
-    description: "A classic vintage lens known for its unique bokeh rendering and sharpness.",
+    description:
+      "A classic vintage lens known for its unique bokeh rendering and sharpness.",
     image: "/images/carl-zeiss-jena-biotar.jpg",
     brand: "Carl Zeiss Jena",
     category: "Lenses",
@@ -320,7 +347,8 @@ export const dummyProducts = [
   },
   {
     name: "Nikkor-S Auto 50mm f/1.4",
-    description: "A fast prime lens with excellent low-light performance, ideal for portrait and street photography.",
+    description:
+      "A fast prime lens with excellent low-light performance, ideal for portrait and street photography.",
     image: "/images/nikkor-s-auto-50mm.jpg",
     brand: "Nikon",
     category: "Lenses",
@@ -331,7 +359,8 @@ export const dummyProducts = [
   },
   {
     name: "Leitz Summicron 50mm f/2",
-    description: "A legendary lens renowned for its optical quality and craftsmanship, compatible with Leica M-mount cameras.",
+    description:
+      "A legendary lens renowned for its optical quality and craftsmanship, compatible with Leica M-mount cameras.",
     image: "/images/leitz-summicron-50mm.jpg",
     brand: "Leitz",
     category: "Lenses",
@@ -342,7 +371,8 @@ export const dummyProducts = [
   },
   {
     name: "Canon FL 55mm f/1.2",
-    description: "A fast standard lens with a wide aperture, suitable for low-light shooting and creating shallow depth of field.",
+    description:
+      "A fast standard lens with a wide aperture, suitable for low-light shooting and creating shallow depth of field.",
     image: "/images/canon-fl-55mm.jpg",
     brand: "Canon",
     category: "Lenses",
@@ -353,7 +383,8 @@ export const dummyProducts = [
   },
   {
     name: "Voigtländer Nokton 35mm f/1.4",
-    description: "A high-speed lens with excellent image quality and a versatile focal length, compatible with Leica M-mount cameras.",
+    description:
+      "A high-speed lens with excellent image quality and a versatile focal length, compatible with Leica M-mount cameras.",
     image: "/images/voigtlander-nokton-35mm.jpg",
     brand: "Voigtländer",
     category: "Lenses",
@@ -364,7 +395,8 @@ export const dummyProducts = [
   },
   {
     name: "Minolta Shutter Release Cable",
-    description: "A vintage shutter release cable designed for Minolta film cameras, allowing remote shutter activation.",
+    description:
+      "A vintage shutter release cable designed for Minolta film cameras, allowing remote shutter activation.",
     image: "/images/minolta-shutter-release-cable.jpg",
     brand: "Minolta",
     category: "Parts",
@@ -375,7 +407,8 @@ export const dummyProducts = [
   },
   {
     name: "Pentax Shutter Release Cable",
-    description: "A classic shutter release cable compatible with Pentax SLR cameras, providing smooth and precise shutter operation.",
+    description:
+      "A classic shutter release cable compatible with Pentax SLR cameras, providing smooth and precise shutter operation.",
     image: "/images/pentax-shutter-release-cable.jpg",
     brand: "Pentax",
     category: "Parts",
@@ -386,7 +419,8 @@ export const dummyProducts = [
   },
   {
     name: "Canon Shutter Release Cable",
-    description: "An original shutter release cable for Canon FD-mount cameras, offering reliable remote shutter control.",
+    description:
+      "An original shutter release cable for Canon FD-mount cameras, offering reliable remote shutter control.",
     image: "/images/canon-shutter-release-cable.jpg",
     brand: "Canon",
     category: "Parts",
@@ -397,7 +431,8 @@ export const dummyProducts = [
   },
   {
     name: "Nikon Hot Shoe Cover",
-    description: "A vintage hot shoe cover designed for Nikon SLR cameras, protecting the hot shoe from dust and moisture.",
+    description:
+      "A vintage hot shoe cover designed for Nikon SLR cameras, protecting the hot shoe from dust and moisture.",
     image: "/images/nikon-hot-shoe-cover.jpg",
     brand: "Nikon",
     category: "Parts",
@@ -408,7 +443,8 @@ export const dummyProducts = [
   },
   {
     name: "Canon Hot Shoe Cover",
-    description: "An original hot shoe cover for Canon EOS cameras, preventing dirt and debris from entering the hot shoe.",
+    description:
+      "An original hot shoe cover for Canon EOS cameras, preventing dirt and debris from entering the hot shoe.",
     image: "/images/canon-hot-shoe-cover.jpg",
     brand: "Canon",
     category: "Parts",
@@ -419,7 +455,8 @@ export const dummyProducts = [
   },
   {
     name: "Leica Hot Shoe Cover",
-    description: "A classic hot shoe cover compatible with Leica M-series cameras, featuring a minimalist design.",
+    description:
+      "A classic hot shoe cover compatible with Leica M-series cameras, featuring a minimalist design.",
     image: "/images/leica-hot-shoe-cover.jpg",
     brand: "Leica",
     category: "Parts",
@@ -430,7 +467,8 @@ export const dummyProducts = [
   },
   {
     name: "Leica M Lens Hood",
-    description: "A vintage metal lens hood designed for Leica M-mount lenses, providing shade and reducing lens flare.",
+    description:
+      "A vintage metal lens hood designed for Leica M-mount lenses, providing shade and reducing lens flare.",
     image: "/images/leica-m-lens-hood.jpg",
     brand: "Leica",
     category: "Parts",
@@ -441,7 +479,8 @@ export const dummyProducts = [
   },
   {
     name: "Nikon F Lens Hood",
-    description: "A classic lens hood compatible with Nikon F-mount lenses, helping to block stray light and protect the lens.",
+    description:
+      "A classic lens hood compatible with Nikon F-mount lenses, helping to block stray light and protect the lens.",
     image: "/images/nikon-f-lens-hood.jpg",
     brand: "Nikon",
     category: "Parts",
@@ -452,7 +491,8 @@ export const dummyProducts = [
   },
   {
     name: "Canon FD Lens Hood",
-    description: "An original lens hood designed for Canon FD-mount lenses, reducing lens flare and improving contrast.",
+    description:
+      "An original lens hood designed for Canon FD-mount lenses, reducing lens flare and improving contrast.",
     image: "/images/canon-fd-lens-hood.jpg",
     brand: "Canon",
     category: "Parts",

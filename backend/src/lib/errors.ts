@@ -1,4 +1,5 @@
 import type { ValidationError } from "express-validator"
+import { config } from "../config"
 
 export abstract class CustomError extends Error {
   abstract statusCode: number
@@ -8,7 +9,11 @@ export abstract class CustomError extends Error {
     Object.setPrototypeOf(this, CustomError.prototype)
   }
 
-  abstract serializeErrors(): { message: string; field?: string; stack?: string | null | undefined }[]
+  abstract serializeErrors(): {
+    message: string
+    field?: string
+    stack?: string | null | undefined
+  }[]
 }
 
 export class InternalServerError extends CustomError {
@@ -23,7 +28,7 @@ export class InternalServerError extends CustomError {
     return [
       {
         message: this.message,
-        stack: process.env.NODE_ENV === "production" ? null : this.stack,
+        stack: config.node_env === "production" ? null : this.stack,
       },
     ]
   }
@@ -41,7 +46,7 @@ export class BadRequestError extends CustomError {
     return [
       {
         message: this.message,
-        stack: process.env.NODE_ENV === "production" ? null : this.stack,
+        stack: config.node_env === "production" ? null : this.stack,
       },
     ]
   }
@@ -56,9 +61,10 @@ export class RequestValidationError extends CustomError {
   }
 
   serializeErrors() {
-    const stack = process.env.NODE_ENV === "production" ? null : this.stack
+    const stack = config.node_env === "production" ? null : this.stack
     return this.errors.map((error) => {
-      if (error.type === "field") return { message: String(error.msg), field: error.path, stack }
+      if (error.type === "field")
+        return { message: String(error.msg), field: error.path, stack }
       return { message: String(error.msg), stack }
     })
   }
@@ -76,7 +82,7 @@ export class DatabaseConnectionError extends CustomError {
     return [
       {
         message: this.message,
-        stack: process.env.NODE_ENV === "production" ? null : this.stack,
+        stack: config.node_env === "production" ? null : this.stack,
       },
     ]
   }
@@ -94,7 +100,7 @@ export class NotAuthorizedError extends CustomError {
     return [
       {
         message: this.message,
-        stack: process.env.NODE_ENV === "production" ? null : this.stack,
+        stack: config.node_env === "production" ? null : this.stack,
       },
     ]
   }
@@ -109,6 +115,11 @@ export class NotFoundError extends CustomError {
   }
 
   serializeErrors() {
-    return [{ message: this.message, stack: process.env.NODE_ENV === "production" ? null : this.stack }]
+    return [
+      {
+        message: this.message,
+        stack: config.node_env === "production" ? null : this.stack,
+      },
+    ]
   }
 }

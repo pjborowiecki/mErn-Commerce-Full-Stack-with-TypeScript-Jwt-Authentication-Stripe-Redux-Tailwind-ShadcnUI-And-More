@@ -36,7 +36,11 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     }
   }, [theme])
 
-  return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  )
 }
 
 export const useTheme = () => React.useContext<IThemeContext>(ThemeContext)

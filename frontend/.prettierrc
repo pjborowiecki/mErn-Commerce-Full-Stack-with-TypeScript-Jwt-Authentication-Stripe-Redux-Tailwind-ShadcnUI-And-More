@@ -7,7 +7,7 @@
   "trailingComma": "es5",
   "bracketSpacing": true,
   "proseWrap": "always",
-  "printWidth": 150,
+  "printWidth": 80,
   "tailwindAttributes": ["tw"],
   "tailwindFunctions": ["cva"],
   "plugins": ["prettier-plugin-tailwindcss"]

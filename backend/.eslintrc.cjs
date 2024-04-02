@@ -7,7 +7,11 @@ module.exports = {
     node: true,
     browser: true,
   },
-  extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended-type-checked", "prettier"],
+  extends: [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended-type-checked",
+    "prettier",
+  ],
   ignorePatterns: ["dist", ".eslintrc.cjs", "jest.config.ts"],
   parser: "@typescript-eslint/parser",
   parserOptions: {

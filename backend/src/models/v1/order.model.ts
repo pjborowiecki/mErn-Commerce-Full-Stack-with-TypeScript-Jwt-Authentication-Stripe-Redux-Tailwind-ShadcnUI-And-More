@@ -1,8 +1,14 @@
 import mongoose from "mongoose"
 
 import { orderItemSchema, type IOrderItem } from "./order-item.model"
-import { shippingAddressSchema, type IShippingAddress } from "./shipping-address.model"
-import { paymentResultSchema, type IPaymentResult } from "./payment-result.model"
+import {
+  shippingAddressSchema,
+  type IShippingAddress,
+} from "./shipping-address.model"
+import {
+  paymentResultSchema,
+  type IPaymentResult,
+} from "./payment-result.model"
 
 export interface IOrder {
   orderItems: IOrderItem[]

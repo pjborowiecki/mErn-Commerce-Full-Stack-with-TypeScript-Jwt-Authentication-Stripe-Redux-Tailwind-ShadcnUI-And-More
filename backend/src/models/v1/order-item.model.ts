@@ -11,5 +11,9 @@ export const orderItemSchema = new mongoose.Schema<IOrderItem>({
   name: { type: String, required: true },
   quantity: { type: Number, required: true },
   price: { type: Number, required: true },
-  product: { type: mongoose.Schema.Types.ObjectId, required: true, ref: "Product" },
+  product: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: "Product",
+  },
 })

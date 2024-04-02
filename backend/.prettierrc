@@ -7,5 +7,5 @@
   "trailingComma": "es5",
   "bracketSpacing": true,
   "proseWrap": "always",
-  "printWidth": 150
+  "printWidth": 80
 }

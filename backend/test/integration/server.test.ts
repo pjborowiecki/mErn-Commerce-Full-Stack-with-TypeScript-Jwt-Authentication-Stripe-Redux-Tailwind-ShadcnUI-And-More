@@ -5,17 +5,23 @@ import { config } from "../../src/config/index"
 
 describe("Server", () => {
   it("Should start and have a proper test environment", () => {
-    expect(process.env.NODE_ENV).toBe("test")
+    expect(config.node_env).toBe("test")
     expect(app).toBeDefined()
   }, 10_000)
 
   it("Should return CORS headers and 204 status code for OPTIONS request", async () => {
     const response = await request(app).options("/")
     expect(response.status).toBe(204)
-    expect(response.headers["access-control-allow-origin"]).toBe(`${config.client.protocol}://${config.client.hostname}:${config.client.port}`)
+    expect(response.headers["access-control-allow-origin"]).toBe(
+      `${config.client.protocol}://${config.client.hostname}:${config.client.port}`
+    )
     expect(response.headers["access-control-allow-credentials"]).toBe("true")
-    expect(response.headers["access-control-allow-methods"]).toBe("PUT,POST,PATCH,DELETE,GET")
-    expect(response.headers["access-control-allow-headers"]).toBe("Origin,X-Requested-With,Content-Type,Accept,Authorization")
+    expect(response.headers["access-control-allow-methods"]).toBe(
+      "PUT,POST,PATCH,DELETE,GET"
+    )
+    expect(response.headers["access-control-allow-headers"]).toBe(
+      "Origin,X-Requested-With,Content-Type,Accept,Authorization"
+    )
   })
 
   it("Should correctly handle 404 Not Found", async () => {
@@ -31,7 +37,9 @@ describe("Server", () => {
   })
 
   it("Should sanitize request data to prevent XSS attacks", async () => {
-    const response = await request(app).post("/some-endpoint").send({ userInput: "<script>alert('XSS')</script>" })
+    const response = await request(app)
+      .post("/some-endpoint")
+      .send({ userInput: "<script>alert('XSS')</script>" })
     expect(response.text).not.toContain("<script>")
   })
 
@@ -44,7 +52,9 @@ describe("Server", () => {
 
   it("Should correctly handle JSON request body size limit", async () => {
     const largeRequestBody = "a".repeat(17000)
-    const response = await request(app).post("/").send({ data: largeRequestBody })
+    const response = await request(app)
+      .post("/")
+      .send({ data: largeRequestBody })
     expect(response.status).toBe(413)
   })
 
@@ -58,7 +68,9 @@ describe("Server", () => {
   })
 
   it("should compress responses unless 'x-no-compression' header is present", async () => {
-    const responseWithHeader = await request(app).get("/").set("x-no-compression", "true")
+    const responseWithHeader = await request(app)
+      .get("/")
+      .set("x-no-compression", "true")
     expect(responseWithHeader.headers["content-encoding"]).toBeUndefined()
   })
 })

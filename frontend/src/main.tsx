@@ -2,7 +2,12 @@ import "@/styles/globals.css"
 
 import * as React from "react"
 import ReactDOM from "react-dom/client"
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom"
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom"
 
 import { ThemeProvider } from "@/providers/theme-provider"
 

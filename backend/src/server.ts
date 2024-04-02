@@ -11,10 +11,14 @@ async function startServer() {
   return new Promise<void>((resolve, reject) => {
     server
       .listen(Number(config.server.port), () => {
-        console.log(`Server running at ${config.server.protocol}://${config.server.hostname}:${config.server.port}`)
+        console.log(
+          `Server running at ${config.server.protocol}://${config.server.hostname}:${config.server.port}`
+        )
         resolve()
       })
-      .on("error", () => reject(new InternalServerError("Error starting server")))
+      .on("error", () =>
+        reject(new InternalServerError("Error starting server"))
+      )
   })
 }
 
