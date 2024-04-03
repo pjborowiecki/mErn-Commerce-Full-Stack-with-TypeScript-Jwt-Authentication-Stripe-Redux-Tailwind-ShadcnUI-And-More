@@ -4,10 +4,20 @@ import asyncHandler from "express-async-handler"
 import * as authService from "../../services/v1/auth.service"
 import * as authValidator from "../../validators/v1/auth.validator"
 import { requestValidator } from "../../middleware/request-validator.middleware"
+import {
+  authenticationHandler,
+  authorizationHandler,
+} from "../../middleware/auth-handler.middleware"
 
 const authController: Router = express.Router()
 
-authController.route("/signup").post(authService.signUp)
+authController
+  .route("/signup")
+  .post(
+    authValidator.signUp,
+    requestValidator,
+    asyncHandler(authService.signUp)
+  )
 
 authController
   .route("/signin")
@@ -17,20 +27,33 @@ authController
     asyncHandler(authService.signIn)
   )
 
-authController.route("/signout").post(authService.signOut)
+authController
+  .route("/signout")
+  .post(requestValidator, authenticationHandler, authService.signOut)
 
-authController.route("/users").get(authService.getAllUsers)
+authController
+  .route("/users")
+  .get(
+    requestValidator,
+    authenticationHandler,
+    authorizationHandler,
+    authService.getAllUsers
+  )
 
 authController
   .route("/users/:id")
-  .get(authService.getUserById)
-  .put(authService.updateUserById)
-  .delete(authService.deleteUserById)
+  .get(authenticationHandler, authorizationHandler, authService.getUserById)
+  .put(authenticationHandler, authorizationHandler, authService.updateUserById)
+  .delete(
+    authenticationHandler,
+    authorizationHandler,
+    authService.deleteUserById
+  )
 
 authController
   .route("/users/current-user")
-  .get(authService.getCurrentUser)
-  .put(authService.updateCurrentUser)
-  .delete(authService.deleteUserById)
+  .get(authenticationHandler, authService.getCurrentUser)
+  .put(authenticationHandler, authService.updateCurrentUser)
+  .delete(authenticationHandler, authService.deleteUserById)
 
 export { authController }

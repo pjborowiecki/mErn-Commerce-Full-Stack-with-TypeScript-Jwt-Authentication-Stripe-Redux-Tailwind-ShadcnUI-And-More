@@ -1,7 +1,7 @@
 import type { Request, Response, NextFunction } from "express"
 import mongoose from "mongoose"
 
-import { CustomError } from "../lib/errors"
+import { CustomError } from "../lib/errors.lib"
 
 export function notFoundHandler(
   request: Request,
@@ -33,10 +33,8 @@ export function errorHandler(
       .status(404)
       .send({ errors: [{ message: "Resource not found", stack: error.stack }] })
   } else
-    response
-      .status(400)
-      .send({
-        errors: [{ message: "Something went wrong", stack: error.stack }],
-      })
+    response.status(400).send({
+      errors: [{ message: "Something went wrong", stack: error.stack }],
+    })
   next()
 }

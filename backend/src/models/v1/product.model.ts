@@ -30,6 +30,11 @@ export const productSchema = new mongoose.Schema<IProduct>(
   },
   {
     timestamps: true,
+    toJSON: {
+      transform(_doc, ret) {
+        delete ret.__v
+      },
+    },
   }
 )
 

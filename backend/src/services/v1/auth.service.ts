@@ -1,10 +1,10 @@
-import { type Request, type Response } from "express"
+import type { Request, Response } from "express"
 import jwt from "jsonwebtoken"
 
 import { config } from "../../config"
 import { User } from "../../models/v1/user.model"
-import { NotAuthorizedError } from "../../lib/errors"
-import { type SignInRequestBody } from "../../types/auth"
+import { NotAuthorizedError } from "../../lib/errors.lib"
+import { type SignInRequestBody } from "../../types"
 
 export function signUp(_request: Request, response: Response): void {
   response.status(201).send({ message: "signUp" })
@@ -14,20 +14,13 @@ export async function signIn(
   request: Request<object, object, SignInRequestBody>,
   response: Response
 ): Promise<void> {
-  if (
-    !config.auth.jwt.signingKey ||
-    !config.auth.jwt.expirationTime ||
-    !config.auth.jwt.expirationTime
-  ) {
-    throw new Error("Missing or invalid JWT signing key or expiration time")
-  }
-
   const user = await User.findOne({ email: request.body.email })
   if (user && (await user.matchPasswords(request.body.password))) {
     const token = jwt.sign(
       {
-        userId: user._id,
+        id: user._id,
         email: user.email,
+        isAdmin: user.isAdmin,
       },
       config.auth.jwt.signingKey,
       { expiresIn: config.auth.jwt.expirationTime }
@@ -41,7 +34,7 @@ export async function signIn(
     })
 
     response.status(200).json({
-      _id: user._id,
+      id: user._id,
       name: user.name,
       email: user.email,
       isAdmin: user.isAdmin,

@@ -1,7 +1,7 @@
 import type { Request, Response, NextFunction } from "express"
 import { validationResult } from "express-validator"
 
-import { RequestValidationError } from "../lib/errors"
+import { RequestValidationError } from "../lib/errors.lib"
 
 export function requestValidator(
   request: Request,

@@ -1,7 +1,7 @@
 import request from "supertest"
 
 import { app } from "../../src/app"
-import { config } from "../../src/config/index"
+import { config } from "../../src/config"
 
 describe("Server", () => {
   it("Should start and have a proper test environment", () => {

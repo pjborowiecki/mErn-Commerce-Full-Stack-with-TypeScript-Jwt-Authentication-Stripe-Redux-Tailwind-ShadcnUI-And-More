@@ -1,8 +1,8 @@
 import http from "http"
 
 import { config } from "./config"
-import { connectDatabase, disconnectDatabase } from "./db/connection"
-import { InternalServerError } from "./lib/errors"
+import { connectDatabase, disconnectDatabase } from "./db/connection.db"
+import { InternalServerError } from "./lib/errors.lib"
 import { app } from "./app"
 
 const server = http.createServer(app)

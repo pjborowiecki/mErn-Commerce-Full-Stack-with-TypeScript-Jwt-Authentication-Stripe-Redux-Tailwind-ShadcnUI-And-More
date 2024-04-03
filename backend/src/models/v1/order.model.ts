@@ -42,6 +42,11 @@ export const orderSchema = new mongoose.Schema<IOrder>(
   },
   {
     timestamps: true,
+    toJSON: {
+      transform(_doc, ret) {
+        delete ret.__v
+      },
+    },
   }
 )
 

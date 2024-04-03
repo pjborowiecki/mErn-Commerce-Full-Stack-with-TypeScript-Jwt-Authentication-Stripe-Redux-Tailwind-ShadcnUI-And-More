@@ -1,7 +1,7 @@
 import mongoose from "mongoose"
 
 import { config } from "../config"
-import { DatabaseConnectionError } from "../lib/errors"
+import { DatabaseConnectionError } from "../lib/errors.lib"
 
 export async function connectDatabase(): Promise<void> {
   try {

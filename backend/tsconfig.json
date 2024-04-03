@@ -23,10 +23,12 @@
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "dist",
-    "baseUrl": ".",
-    "types": ["jest"]
+    "outDir": "./dist",
+    "sourceRoot": "./src",
+    "baseUrl": "."
   },
   "include": ["src/**/*.ts", "test/**/*.ts", "src/db/seed-database.js"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "typeRoots": ["./src/types", "./node_modules/@types"],
+  "types": ["jest"]
 }

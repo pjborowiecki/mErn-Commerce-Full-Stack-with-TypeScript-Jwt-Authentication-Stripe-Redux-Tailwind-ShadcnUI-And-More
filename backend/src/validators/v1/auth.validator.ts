@@ -8,3 +8,12 @@ export const signIn: ValidationChain[] = [
     .notEmpty()
     .withMessage("Password is required"),
 ]
+
+export const signUp: ValidationChain[] = [
+  body("email").isEmail().withMessage("Invalid email address").notEmpty(),
+  body("password")
+    .isString()
+    .trim()
+    .notEmpty()
+    .withMessage("Password is required"),
+]

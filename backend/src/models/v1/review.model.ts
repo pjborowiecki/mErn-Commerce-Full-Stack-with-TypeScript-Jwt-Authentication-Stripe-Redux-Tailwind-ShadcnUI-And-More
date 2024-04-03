@@ -16,6 +16,11 @@ export const reviewSchema = new mongoose.Schema<IReview>(
   },
   {
     timestamps: true,
+    toJSON: {
+      transform(_doc, ret) {
+        delete ret.__v
+      },
+    },
   }
 )
 

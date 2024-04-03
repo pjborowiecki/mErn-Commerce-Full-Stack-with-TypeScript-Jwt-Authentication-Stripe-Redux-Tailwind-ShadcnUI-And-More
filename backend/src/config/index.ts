@@ -1,56 +1,74 @@
 import dotenv from "dotenv"
-import path from "path"
-import Joi from "joi"
+import { z } from "zod"
 
-dotenv.config({ path: path.resolve(__dirname, "../../.env") })
+dotenv.config()
 
-const envSchema = Joi.object({
-  NODE_ENV: Joi.string().valid("development", "production", "test").required(),
-  SERVER_PROTOCOL: Joi.string().required().default("http"),
-  SERVER_HOSTNAME: Joi.string().required().default("localhost"),
-  SERVER_PORT: Joi.number().required().default(4000),
-  CLIENT_PROTOCOL: Joi.string().required().default("http"),
-  CLIENT_HOSTNAME: Joi.string().required().default("localhost"),
-  CLIENT_PORT: Joi.number().required().default(3000),
-  DATABASE_URL: Joi.string().required(),
-  JWT_SIGNING_KEY: Joi.string().required(),
-  JWT_EXPIRATION_TIME: Joi.string().required().default("1d"),
-  JWT_EXPIRATION_TIME_IN_MS: Joi.number().required().default(86400000),
+const environmentSchema = z.object({
+  NODE_ENV: z
+    .enum(["development", "production", "test"])
+    .default("development"),
+  SERVER_PROTOCOL: z
+    .string({ required_error: "SERVER_PROTOCOL missing" })
+    .default("http"),
+  SERVER_HOSTNAME: z
+    .string({
+      required_error: "SERVER_HOSTNAME missing",
+    })
+    .default("localhost"),
+  SERVER_PORT: z.coerce
+    .number({
+      required_error: "SERVER_PORT missing",
+    })
+    .int()
+    .positive()
+    .max(65536)
+    .default(4000),
+  CLIENT_PROTOCOL: z
+    .string({ required_error: "CLIENT_PROTOCOL missing" })
+    .default("http"),
+  CLIENT_HOSTNAME: z
+    .string({ required_error: "CLIENT_HOSTNAME missing" })
+    .default("localhost"),
+  CLIENT_PORT: z.coerce
+    .number({ required_error: "CLIENT_PORT missing" })
+    .int()
+    .positive()
+    .max(65536)
+    .default(3000),
+  DATABASE_URL: z.string({ required_error: "DATABASE_URL missing" }).min(3),
+  JWT_SIGNING_KEY: z.string({ required_error: "JWT_SIGNING_KEY missing" }),
+  JWT_EXPIRATION_TIME: z
+    .string({ required_error: "JWT_EXPIRATION_TIME missing" })
+    .default("1d"),
+  JWT_EXPIRATION_TIME_IN_MS: z.coerce
+    .number({ required_error: "JWT_EXPIRATION_TIME_IN_MS missing" })
+    .int()
+    .positive()
+    .default(86400000),
 })
 
-const { error, value: validatedEnv } = envSchema.validate(process.env, {
-  abortEarly: false,
-  stripUnknown: true,
-}) as { error?: Joi.ValidationError; value: NodeJS.ProcessEnv }
-
-if (error) {
-  throw new Error(
-    `Environment variable validation error: \n${error.details
-      .map((detail) => detail.message)
-      .join("\n")}`
-  )
-}
+const env = environmentSchema.parse(process.env)
 
 export const config = {
-  node_env: validatedEnv.NODE_ENV,
+  node_env: env.CLIENT_HOSTNAME,
   server: {
-    protocol: validatedEnv.SERVER_PROTOCOL,
-    hostname: validatedEnv.SERVER_HOSTNAME,
-    port: validatedEnv.SERVER_PORT,
+    protocol: env.SERVER_PROTOCOL,
+    hostname: env.SERVER_HOSTNAME,
+    port: env.SERVER_PORT,
   },
   client: {
-    protocol: validatedEnv.CLIENT_PROTOCOL,
-    hostname: validatedEnv.CLIENT_HOSTNAME,
-    port: validatedEnv.CLIENT_PORT,
+    protocol: env.CLIENT_PROTOCOL,
+    hostname: env.CLIENT_HOSTNAME,
+    port: env.CLIENT_PORT,
   },
   database: {
-    url: validatedEnv.DATABASE_URL,
+    url: env.DATABASE_URL,
   },
   auth: {
     jwt: {
-      signingKey: validatedEnv.JWT_SIGNING_KEY,
-      expirationTime: validatedEnv.JWT_EXPIRATION_TIME,
-      expirationTimeInMs: validatedEnv.JWT_EXPIRATION_TIME_IN_MS,
+      signingKey: env.JWT_SIGNING_KEY,
+      expirationTime: env.JWT_EXPIRATION_TIME,
+      expirationTimeInMs: env.JWT_EXPIRATION_TIME_IN_MS,
     },
   },
 }
