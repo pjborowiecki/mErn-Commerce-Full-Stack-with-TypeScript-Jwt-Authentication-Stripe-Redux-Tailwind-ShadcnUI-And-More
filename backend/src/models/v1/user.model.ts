@@ -27,6 +27,11 @@ export const userSchema = new mongoose.Schema<IUser>(
   }
 )
 
+userSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) next()
+  this.password = await bcrypt.hash(this.password, 10)
+})
+
 userSchema.methods.matchPasswords = async function (enteredPassword: string) {
   return await bcrypt.compare(enteredPassword, String(this.password))
 }

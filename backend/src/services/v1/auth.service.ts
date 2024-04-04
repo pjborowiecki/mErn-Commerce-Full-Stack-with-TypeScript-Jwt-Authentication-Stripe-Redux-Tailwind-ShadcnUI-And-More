@@ -1,13 +1,39 @@
 import type { Request, Response } from "express"
-import jwt from "jsonwebtoken"
 
-import { config } from "../../config"
 import { User } from "../../models/v1/user.model"
-import { NotAuthorizedError } from "../../lib/errors.lib"
-import { type SignInRequestBody } from "../../types"
+import { generateJwt, setJwtCookie, clearJwtCookie } from "../../lib/auth.lib"
+import {
+  NotAuthorizedError,
+  ResourceAlreadyExistsError,
+} from "../../lib/errors.lib"
+import type { SignInRequestBody, SignUpRequestBody } from "../../types"
 
-export function signUp(_request: Request, response: Response): void {
-  response.status(201).send({ message: "signUp" })
+export async function signUp(
+  request: Request<object, object, SignUpRequestBody>,
+  response: Response
+): Promise<void> {
+  const existingUser = await User.findOne({ email: request.body.email })
+  if (existingUser)
+    throw new ResourceAlreadyExistsError("This email has already been taken")
+
+  const newUser = await User.create({
+    name: request.body.name,
+    email: request.body.email,
+    password: request.body.password,
+  })
+
+  if (newUser) {
+    const payload = {
+      id: newUser._id.toString(),
+      name: newUser.name,
+      email: newUser.email,
+      isAdmin: newUser.isAdmin,
+    }
+
+    const token = generateJwt(payload)
+    setJwtCookie(response, token)
+    response.status(201).json(payload)
+  }
 }
 
 export async function signIn(
@@ -16,40 +42,23 @@ export async function signIn(
 ): Promise<void> {
   const user = await User.findOne({ email: request.body.email })
   if (user && (await user.matchPasswords(request.body.password))) {
-    const token = jwt.sign(
-      {
-        id: user._id,
-        email: user.email,
-        isAdmin: user.isAdmin,
-      },
-      config.auth.jwt.signingKey,
-      { expiresIn: config.auth.jwt.expirationTime }
-    )
+    const payload = {
+      id: user._id.toString(),
+      name: user.name,
+      email: user.email,
+      isAdmin: user.isAdmin,
+    }
 
-    response
-      .status(200)
-      .cookie("jwt", token, {
-        httpOnly: true,
-        secure: config.node_env !== "development",
-        sameSite: "strict",
-        maxAge: Number(config.auth.jwt.expirationTimeInMs),
-      })
-      .json({
-        id: user._id,
-        name: user.name,
-        email: user.email,
-        isAdmin: user.isAdmin,
-      })
+    const token = generateJwt(payload)
+    setJwtCookie(response, token)
+    response.status(200).json(payload)
   } else {
     throw new NotAuthorizedError("Inavlid email or password")
   }
 }
 
 export function signOut(_request: Request, response: Response): void {
-  response.status(204).cookie("jwt", "", {
-    httpOnly: true,
-    expires: new Date(0),
-  })
+  clearJwtCookie(response)
 }
 
 export function getCurrentUser(_request: Request, response: Response): void {

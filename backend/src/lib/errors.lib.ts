@@ -123,3 +123,21 @@ export class NotFoundError extends CustomError {
     ]
   }
 }
+
+export class ResourceAlreadyExistsError extends CustomError {
+  statusCode = 409
+
+  constructor(message?: string) {
+    super(message || "Resource already exists")
+    Object.setPrototypeOf(this, ResourceAlreadyExistsError.prototype)
+  }
+
+  serializeErrors() {
+    return [
+      {
+        message: this.message,
+        stack: config.node_env === "production" ? null : this.stack,
+      },
+    ]
+  }
+}
