@@ -26,26 +26,30 @@ export async function signIn(
       { expiresIn: config.auth.jwt.expirationTime }
     )
 
-    response.cookie("jwt", token, {
-      httpOnly: true,
-      secure: config.node_env !== "development",
-      sameSite: "strict",
-      maxAge: Number(config.auth.jwt.expirationTimeInMs),
-    })
-
-    response.status(200).json({
-      id: user._id,
-      name: user.name,
-      email: user.email,
-      isAdmin: user.isAdmin,
-    })
+    response
+      .status(200)
+      .cookie("jwt", token, {
+        httpOnly: true,
+        secure: config.node_env !== "development",
+        sameSite: "strict",
+        maxAge: Number(config.auth.jwt.expirationTimeInMs),
+      })
+      .json({
+        id: user._id,
+        name: user.name,
+        email: user.email,
+        isAdmin: user.isAdmin,
+      })
   } else {
     throw new NotAuthorizedError("Inavlid email or password")
   }
 }
 
 export function signOut(_request: Request, response: Response): void {
-  response.status(200).send({ message: "signOut" })
+  response.status(204).cookie("jwt", "", {
+    httpOnly: true,
+    expires: new Date(0),
+  })
 }
 
 export function getCurrentUser(_request: Request, response: Response): void {
