@@ -42,18 +42,33 @@ authController
 
 authController
   .route("/users/:id")
-  .get(authenticationHandler, authorizationHandler, authService.getUserById)
-  .put(authenticationHandler, authorizationHandler, authService.updateUserById)
+  .get(
+    requestValidator,
+    authenticationHandler,
+    authorizationHandler,
+    authService.getUserById
+  )
+  .put(
+    requestValidator,
+    authenticationHandler,
+    authorizationHandler,
+    authService.updateUserById
+  )
   .delete(
+    requestValidator,
     authenticationHandler,
     authorizationHandler,
     authService.deleteUserById
   )
 
 authController
-  .route("/users/current-user")
-  .get(authenticationHandler, authService.getCurrentUser)
-  .put(authenticationHandler, authService.updateCurrentUser)
-  .delete(authenticationHandler, authService.deleteUserById)
+  .route("/current-user")
+  .get(
+    requestValidator,
+    authenticationHandler,
+    asyncHandler(authService.getCurrentUser)
+  )
+  .put(requestValidator, authenticationHandler, authService.updateCurrentUser)
+  .delete(requestValidator, authenticationHandler, authService.deleteUserById)
 
 export { authController }

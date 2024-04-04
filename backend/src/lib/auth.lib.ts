@@ -20,8 +20,10 @@ export function setJwtCookie(response: Response, token: string): void {
 }
 
 export function clearJwtCookie(response: Response): void {
-  response.status(204).cookie("jwt", "", {
-    httpOnly: true,
-    expires: new Date(0),
-  })
+  response
+    .cookie("jwt", "", {
+      httpOnly: true,
+      expires: new Date(0),
+    })
+    .sendStatus(204)
 }

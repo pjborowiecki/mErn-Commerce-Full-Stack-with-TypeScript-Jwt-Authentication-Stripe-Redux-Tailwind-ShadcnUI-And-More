@@ -16,4 +16,5 @@ export const signUp: ValidationChain[] = [
     .trim()
     .notEmpty()
     .withMessage("Password is required"),
+  body("name").isString().trim().notEmpty().withMessage("Name is required"),
 ]

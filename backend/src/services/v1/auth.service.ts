@@ -4,6 +4,7 @@ import { User } from "../../models/v1/user.model"
 import { generateJwt, setJwtCookie, clearJwtCookie } from "../../lib/auth.lib"
 import {
   NotAuthorizedError,
+  NotFoundError,
   ResourceAlreadyExistsError,
 } from "../../lib/errors.lib"
 import type { SignInRequestBody, SignUpRequestBody } from "../../types"
@@ -61,8 +62,21 @@ export function signOut(_request: Request, response: Response): void {
   clearJwtCookie(response)
 }
 
-export function getCurrentUser(_request: Request, response: Response): void {
-  response.status(200).send({ message: "getCurrentUser" })
+export async function getCurrentUser(
+  request: Request,
+  response: Response
+): Promise<void> {
+  const currentUser = await User.findById(request.currentUser?.id)
+  if (currentUser) {
+    response.status(200).json({
+      id: currentUser._id,
+      name: currentUser.name,
+      email: currentUser.email,
+      isAdmin: currentUser.isAdmin,
+    })
+  } else {
+    throw new NotFoundError("User not found")
+  }
 }
 
 export function updateCurrentUser(_request: Request, response: Response): void {
