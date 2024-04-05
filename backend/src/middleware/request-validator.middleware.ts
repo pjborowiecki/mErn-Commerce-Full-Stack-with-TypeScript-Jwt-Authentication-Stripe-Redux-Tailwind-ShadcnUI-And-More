@@ -7,7 +7,7 @@ export function requestValidator(
   request: Request,
   _response: Response,
   next: NextFunction
-) {
+): void {
   const errors = validationResult(request)
   if (!errors.isEmpty()) throw new RequestValidationError(errors.array())
   next()

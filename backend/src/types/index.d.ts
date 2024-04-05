@@ -1,7 +1,7 @@
 import type { DeepPartial } from "utility-types"
 
 interface UserPayload {
-  id: string
+  id: object
   name: string
   email: string
   isAdmin: boolean
@@ -34,4 +34,10 @@ export interface SignUpRequestBody {
   name: string
   email: string
   password: string
+}
+
+export interface UpdateCurrentUserRequestBody {
+  name?: string
+  email?: string
+  password?: string
 }

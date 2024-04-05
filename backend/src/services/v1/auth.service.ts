@@ -7,7 +7,11 @@ import {
   NotFoundError,
   ResourceAlreadyExistsError,
 } from "../../lib/errors.lib"
-import type { SignInRequestBody, SignUpRequestBody } from "../../types"
+import type {
+  SignInRequestBody,
+  SignUpRequestBody,
+  UpdateCurrentUserRequestBody,
+} from "../../types"
 
 export async function signUp(
   request: Request<object, object, SignUpRequestBody>,
@@ -25,7 +29,7 @@ export async function signUp(
 
   if (newUser) {
     const payload = {
-      id: newUser._id.toString(),
+      id: newUser._id,
       name: newUser.name,
       email: newUser.email,
       isAdmin: newUser.isAdmin,
@@ -44,7 +48,7 @@ export async function signIn(
   const user = await User.findOne({ email: request.body.email })
   if (user && (await user.matchPasswords(request.body.password))) {
     const payload = {
-      id: user._id.toString(),
+      id: user._id,
       name: user.name,
       email: user.email,
       isAdmin: user.isAdmin,
@@ -79,11 +83,33 @@ export async function getCurrentUser(
   }
 }
 
-export function updateCurrentUser(_request: Request, response: Response): void {
-  response.status(200).send({ message: "updateCurrentUser" })
+export async function updateCurrentUser(
+  request: Request<object, object, UpdateCurrentUserRequestBody>,
+  response: Response
+): Promise<void> {
+  const currentUser = await User.findById(request.currentUser?.id)
+  if (!currentUser) throw new NotFoundError("User not found")
+
+  currentUser.name = request.body.name || currentUser.name
+  currentUser.email = request.body.email || currentUser.email
+
+  if (request.body.password) currentUser.password = request.body.password
+
+  const updateUser = await currentUser.save()
+
+  response.status(200).json({
+    id: updateUser._id,
+    name: updateUser.name,
+    email: updateUser.email,
+    isAdmin: updateUser.isAdmin,
+  })
 }
 
-export function deleteCurrentUser(_request: Request, response: Response): void {
+export async function deleteCurrentUser(
+  _request: Request,
+  response: Response
+): Promise<void> {
+  await User.deleteOne()
   response.status(200).send({ message: "deleteCurrentUser" })
 }
 

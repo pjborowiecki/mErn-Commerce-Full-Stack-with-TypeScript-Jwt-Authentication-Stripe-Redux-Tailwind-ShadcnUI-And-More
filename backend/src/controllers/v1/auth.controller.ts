@@ -14,7 +14,7 @@ const authController: Router = express.Router()
 authController
   .route("/signup")
   .post(
-    authValidator.signUp,
+    authValidator.signUpValidationSchema,
     requestValidator,
     asyncHandler(authService.signUp)
   )
@@ -22,7 +22,7 @@ authController
 authController
   .route("/signin")
   .post(
-    authValidator.signIn,
+    authValidator.signInValidationSchema,
     requestValidator,
     asyncHandler(authService.signIn)
   )
@@ -68,7 +68,16 @@ authController
     authenticationHandler,
     asyncHandler(authService.getCurrentUser)
   )
-  .put(requestValidator, authenticationHandler, authService.updateCurrentUser)
-  .delete(requestValidator, authenticationHandler, authService.deleteUserById)
+  .put(
+    authenticationHandler,
+    authValidator.updateCurrentUserValidationSchema,
+    requestValidator,
+    asyncHandler(authService.updateCurrentUser)
+  )
+  .delete(
+    requestValidator,
+    authenticationHandler,
+    asyncHandler(authService.deleteUserById)
+  )
 
 export { authController }

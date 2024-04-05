@@ -6,12 +6,14 @@ import helmet from "helmet"
 import xss from "xss-shield"
 import cors from "cors"
 
+import { config } from "./config"
 import { corsOptions } from "./config/cors"
 import { cookieSessionOptions } from "./config/cookies"
 import { compressionOptions } from "./config/compression"
 import { xssOptions } from "./config/xss"
 
 import { logger } from "./middleware/logger.middleware"
+import { rateLimiter } from "./middleware/rate-limiter.middleware"
 import {
   notFoundHandler,
   errorHandler,
@@ -32,6 +34,10 @@ app.use(cookieParser())
 app.use(cookieSession(cookieSessionOptions))
 app.use(compression(compressionOptions))
 app.use(logger)
+
+if (config.node_env === "production") {
+  app.use("/api/v1/auth", rateLimiter)
+}
 
 app.use("/api/v1", mainController)
 app.use("/api/v1/auth", authController)
