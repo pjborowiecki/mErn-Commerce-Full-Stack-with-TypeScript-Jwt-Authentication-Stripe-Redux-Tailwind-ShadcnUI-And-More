@@ -1,6 +1,6 @@
 # mErn Commerce
 
-mErn Commerce is a full-stack application built with MongoDB, Express, React, NodeJs (MERN stack), and several other wonderful tools, such as TypeScrips, Mongoose, Redux, Tailwind CSS, ShadcnUI, Stripe, and more.
+mErn Commerce is a full-stack application built with MongoDB, Express, React, NodeJs (MERN stack), and several other wonderful tools, such as TypeScrip, Mongoose, Redux, Tailwind CSS, ShadcnUI, Stripe, and more.
 
 It features a fully-fledged authentication with JWT and HTTP-only cookies, payments integration, and full CRUD functionality, supported by product search, pagination, and many other useful features.
 

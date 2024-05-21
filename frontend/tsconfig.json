@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "target": "ES2022",
+    "module": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "strict": true,
     "useDefineForClassFields": true,
     "skipLibCheck": true,
@@ -39,14 +39,13 @@
     "node_modules/@testing-library/jest-dom"
   ],
   "include": [
-    "src",
     "**/*.ts",
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs",
     "node_modules/@types",
     "tailwind.config.ts",
-    "vite.config.ts",
-    "server.js"
-  ]
+    "vite.config.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
 }
