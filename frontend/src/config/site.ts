@@ -7,5 +7,6 @@ const links = {
 
 export const siteConfig = {
   name: "mErnCommerce",
+  author: "Piotr borowiecki",
   links,
 }

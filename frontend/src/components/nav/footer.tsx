@@ -1,24 +1,27 @@
+import { siteConfig } from "@/config/site"
 import { footerLinks } from "@/data/nav-links"
 
 import Balancer from "react-wrap-balancer"
 
+import { Button, type ButtonProps } from "@/components/ui/button"
+
+import { cn } from "@/lib/utils"
+
 import { NewsletterSignUpForm } from "@/components/forms/newsletter-signup-form"
+import { Icons } from "@/components/icons"
 import { ThemeSwitch } from "@/components/theme-switch"
 
-export function Footer(): JSX.Element {
+export function Footer({ className, ...props }: ButtonProps): JSX.Element {
   return (
     <footer
       id="footer"
       aria-label="footer"
       className="grid gap-8 border-t bg-accent/40 pb-8 pt-16"
     >
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-8 sm:flex-row">
+      <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 sm:flex-row md:px-8">
         <div className="grid flex-1 grid-cols-3 gap-4 md:gap-8">
           {footerLinks.map((link, index) => (
-            <div
-              key={index}
-              className="space-y-1 text-center sm:text-start md:space-y-2 md:text-start"
-            >
+            <div key={index} className="space-y-1 md:space-y-2 md:text-start">
               <ul className="space-y-1 md:space-y-2">
                 {link.subLinks.map((subLink, index) => (
                   <li key={index}>
@@ -41,7 +44,7 @@ export function Footer(): JSX.Element {
         <div className="hidden flex-col gap-4 sm:flex sm:w-1/3 xl:pl-24">
           <p className="text-sm font-medium leading-5 2xl:text-base">
             <Balancer>
-              Join our newsletter to never miss on deals and offers!
+              Join our newsletter now to never miss on deals and offers!
             </Balancer>
           </p>
 
@@ -49,11 +52,37 @@ export function Footer(): JSX.Element {
         </div>
       </div>
 
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-8">
-        <p className="text-sm text-muted-foreground xl:text-base">
-          <Balancer>&copy; 2024 mErnCommerce. All rights reserved.</Balancer>
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 md:px-8">
+        <p className="text-sm text-muted-foreground">
+          <Balancer>
+            &copy; 2024 mErnCommerce. Created by{" "}
+            <a
+              href={siteConfig.links.authorsGitHub}
+              target="_blank"
+              rel="noreferrer"
+              className="font-semibold underline-offset-8 hover:underline"
+            >
+              {siteConfig.author}
+            </a>
+            .
+          </Balancer>
         </p>
         <div className="flex items-center justify-center">
+          <a
+            href={siteConfig.links.gitHub}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full"
+          >
+            <Button
+              variant="ghost"
+              className={cn("size-8 rounded-full px-0", className)}
+              {...props}
+              asChild
+            >
+              <Icons.gitHub className="size-[34px] rounded-full" />
+            </Button>
+          </a>
           <ThemeSwitch />
         </div>
       </div>
