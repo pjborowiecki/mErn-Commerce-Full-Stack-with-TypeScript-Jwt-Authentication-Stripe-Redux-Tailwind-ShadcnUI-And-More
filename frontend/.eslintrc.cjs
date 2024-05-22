@@ -44,12 +44,14 @@ module.exports = {
       "warn",
       {
         groups: [
-          ["^@/styles", "^@/config", "^.*\\.css$"],
+          ["^@/styles", "^.*\\.css$", "^@/config", "^@/data"],
           ["^react", "^@?\\w"],
           ["^@/types", "^@/validations"],
           ["^@/providers", "^@/hooks"],
           ["^@/pages"],
-          ["^@/components/ui", "^@/components"],
+          ["^@/components/ui"],
+          [""],
+          ["^@/components"],
           ["^\\."],
         ],
       },

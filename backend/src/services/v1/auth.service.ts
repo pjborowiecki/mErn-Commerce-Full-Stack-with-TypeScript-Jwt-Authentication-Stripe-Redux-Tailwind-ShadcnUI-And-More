@@ -105,6 +105,7 @@ export async function updateCurrentUser(
   })
 }
 
+// TODO
 export async function deleteCurrentUser(
   _request: Request,
   response: Response
@@ -113,18 +114,22 @@ export async function deleteCurrentUser(
   response.status(200).send({ message: "deleteCurrentUser" })
 }
 
+// TODO
 export function getAllUsers(_request: Request, response: Response): void {
   response.status(200).send({ message: "getAllUsers" })
 }
 
+// TODO
 export function getUserById(_request: Request, response: Response): void {
   response.status(200).send({ message: "getUserById" })
 }
 
+// TODO
 export function updateUserById(_request: Request, response: Response): void {
   response.status(200).send({ message: "updateCurrentUser" })
 }
 
+// TODO
 export function deleteUserById(_request: Request, response: Response): void {
   response.status(200).send({ message: "deleteUserById" })
 }

@@ -18,6 +18,7 @@ import { SignInPage } from "@/pages/signin-page"
 import { SignUpPage } from "@/pages/signup-page"
 
 import { Toaster } from "@/components/ui/toaster"
+
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 
 const router = createBrowserRouter(

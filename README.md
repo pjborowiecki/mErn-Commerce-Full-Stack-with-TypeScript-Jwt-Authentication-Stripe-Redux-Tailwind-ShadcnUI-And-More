@@ -8,8 +8,12 @@ This project serves not only as a porfolio piece, but also as a great starting p
 
 ## Features
 
-- Authentication with JWT and HTTP-only cookies
-- Payments integration with Stripe
-- Full CRUD functionality for products, users, and orders
-- Product search and pagination
-- User roles and permissions
+- [ ] Authentication with JWT and HTTP-only cookies
+- [ ] Payments integration with Stripe
+- [ ] Full CRUD functionality for products, users, and orders
+- [ ] Product search and pagination
+- [ ] User roles and permissions
+
+- [ ] Backend tests
+- [ ] Frontend tests
+- [ ] Documentation

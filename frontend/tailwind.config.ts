@@ -60,6 +60,10 @@ const config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      scale: {
+        "55": "0.55",
+        "60": "0.60",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
