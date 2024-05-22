@@ -7,7 +7,7 @@ export function MainLayout(): JSX.Element {
   return (
     <div className="flex min-h-screen w-full flex-col">
       <Header />
-      <main>
+      <main className="flex-1">
         <Outlet />
       </main>
       <Footer />

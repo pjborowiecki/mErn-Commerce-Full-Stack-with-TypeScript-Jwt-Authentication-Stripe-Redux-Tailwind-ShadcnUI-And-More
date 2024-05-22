@@ -6,6 +6,11 @@ It features a fully-fledged authentication with JWT and HTTP-only cookies, payme
 
 This project serves not only as a porfolio piece, but also as a great starting point for anyone looking to build a scalable and secure e-commerce application, or as an example for other full-stack applications build with MERN stack.
 
+<br />
+
+> **Warning**
+> This project is still in active development. Please see the list below to get a better understanding of what feature have been implemented already and what is yet to come.
+
 ## Features
 
 - [ ] Authentication with JWT and HTTP-only cookies

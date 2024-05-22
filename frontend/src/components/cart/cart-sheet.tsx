@@ -13,7 +13,7 @@ export function CartSheet({ className, ...props }: ButtonProps): JSX.Element {
         {...props}
         asChild
       >
-        <Icons.shoppingCart className="size-8 rounded-full" />
+        <Icons.shoppingCart className="size-[34px] rounded-full" />
       </Button>
     </a>
   )

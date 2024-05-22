@@ -23,8 +23,7 @@ export function Header(): JSX.Element {
         <NavigationMobile navLinks={navLinks} />
 
         <div className="flex flex-1 items-center justify-end">
-          <nav className="flex items-center justify-center gap-1">
-            <ThemeSwitch />
+          <nav className="flex items-center justify-center gap-1.5">
             <CartSheet />
             <UserDropdown user={session?.user} />
           </nav>
