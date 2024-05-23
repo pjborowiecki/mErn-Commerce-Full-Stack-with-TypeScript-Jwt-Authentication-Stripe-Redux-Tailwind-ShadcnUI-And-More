@@ -1,4 +1,4 @@
-import type { DummyProduct } from "../types"
+import type { DummyProduct } from "@/types"
 
 export const dummyProducts = [
   {
