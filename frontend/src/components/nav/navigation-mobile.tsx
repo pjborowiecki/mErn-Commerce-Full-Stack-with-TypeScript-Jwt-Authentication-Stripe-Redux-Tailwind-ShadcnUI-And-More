@@ -80,8 +80,9 @@ export function NavigationMobile({
           <a
             href="/"
             onClick={() => setIsOpen(false)}
-            className="flex items-center"
+            className="flex items-center justify-center gap-1.5"
           >
+            <Icons.logo aria-hidden="true" className="size-6" />
             <span className="font-bold">{siteConfig.name}</span>
             <span className="sr-only">Home Page</span>
           </a>

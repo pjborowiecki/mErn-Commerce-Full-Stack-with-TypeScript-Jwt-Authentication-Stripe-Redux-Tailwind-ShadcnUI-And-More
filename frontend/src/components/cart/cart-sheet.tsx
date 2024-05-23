@@ -4,7 +4,10 @@ import { cn } from "@/lib/utils"
 
 import { Icons } from "@/components/icons"
 
-export function CartSheet({ className, ...props }: ButtonProps): JSX.Element {
+export function CartSheet({
+  className,
+  ...props
+}: Readonly<ButtonProps>): JSX.Element {
   return (
     <a href="/cart" className="rounded-full">
       <Button
