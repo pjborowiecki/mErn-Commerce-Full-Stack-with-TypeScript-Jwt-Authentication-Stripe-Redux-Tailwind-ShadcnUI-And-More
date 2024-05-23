@@ -16,7 +16,10 @@ export function HeaderLogo({
     <Link to="/">
       <Button
         variant="link"
-        className={cn("gap-1.5 px-0", className)}
+        className={cn(
+          "gap-1.5 px-0 hover:text-muted-foreground hover:no-underline",
+          className
+        )}
         {...props}
       >
         <Icons.logo className="size-6" aria-hidden="true" />

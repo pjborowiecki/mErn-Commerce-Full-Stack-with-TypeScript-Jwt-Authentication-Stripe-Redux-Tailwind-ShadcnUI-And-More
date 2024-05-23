@@ -24,7 +24,7 @@ export function CategoryCard({
       to={`/categories/${slugify(category.name)}`}
       aria-label={category.name}
     >
-      <Card>
+      <Card className="rounded-md bg-accent/20 hover:bg-accent/60">
         <CardHeader>
           <CardTitle>{category.name}</CardTitle>
         </CardHeader>

@@ -33,3 +33,28 @@ export function toSentenceCase(str: string) {
 export function truncate(str: string, length: number) {
   return str.length > length ? `${str.substring(0, length)}...` : str
 }
+
+export function formatPrice(
+  price: number | string,
+  options: Intl.NumberFormatOptions = {}
+) {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: options.currency ?? "USD",
+    notation: options.notation ?? "compact",
+    ...options,
+  }).format(Number(price))
+}
+
+export function formatNumber(
+  number: number | string,
+  options: Intl.NumberFormatOptions = {}
+) {
+  return new Intl.NumberFormat("en-US", {
+    style: options.style ?? "decimal",
+    notation: options.notation ?? "standard",
+    minimumFractionDigits: options.minimumFractionDigits ?? 0,
+    maximumFractionDigits: options.maximumFractionDigits ?? 2,
+    ...options,
+  }).format(Number(number))
+}

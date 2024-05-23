@@ -180,7 +180,7 @@ export const dummyProducts = [
     category: "Cameras",
     price: 379.99,
     countInStock: 6,
-    rating: 4.6,
+    rating: 3.9,
     numReviews: 11,
   },
   {
@@ -193,7 +193,7 @@ export const dummyProducts = [
     category: "Books",
     price: 39.99,
     countInStock: 10,
-    rating: 4.9,
+    rating: 4.1,
     numReviews: 30,
   },
   {
@@ -282,7 +282,7 @@ export const dummyProducts = [
     category: "Accessories",
     price: 49.99,
     countInStock: 25,
-    rating: 4.8,
+    rating: 3.8,
     numReviews: 20,
   },
   {
@@ -295,7 +295,7 @@ export const dummyProducts = [
     category: "Magazines",
     price: 19.99,
     countInStock: 10,
-    rating: 4.7,
+    rating: 2.7,
     numReviews: 15,
   },
   {
@@ -334,7 +334,7 @@ export const dummyProducts = [
     category: "Postcards",
     price: 9.99,
     countInStock: 20,
-    rating: 4.5,
+    rating: 5,
     numReviews: 18,
   },
   {
