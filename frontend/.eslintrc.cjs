@@ -47,7 +47,7 @@ module.exports = {
           ["^@/styles", "^.*\\.css$", "^@/config", "^@/data"],
           ["^react", "^@?\\w"],
           ["^@/types", "^@/validations"],
-          ["^@/providers", "^@/hooks"],
+          ["^@/providers", "^@/hooks", "^@/state"],
           ["^@/pages"],
           ["^@/components/ui"],
           [""],

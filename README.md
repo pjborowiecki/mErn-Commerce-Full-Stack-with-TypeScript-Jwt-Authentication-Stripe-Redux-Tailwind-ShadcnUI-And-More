@@ -22,3 +22,7 @@ This project serves not only as a porfolio piece, but also as a great starting p
 - [ ] Backend tests
 - [ ] Frontend tests
 - [ ] Documentation
+
+- [ ] Server-side Rendering and Partial Pre-rendering (PPR)
+- [ ] Improved data fetching, perhaps with React Query
+- [ ] SEO
