@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 import type { DummyProduct } from "@/types"
 
 import {
@@ -18,7 +20,7 @@ export function ProductCard({
   product,
 }: Readonly<ProductCardProps>): JSX.Element {
   return (
-    <a href={`/products/${slugify(product.name)}`} aria-label={product.name}>
+    <Link to={`/products/${slugify(product.name)}`} aria-label={product.name}>
       <Card>
         <CardHeader>
           <CardTitle>{product.name}</CardTitle>
@@ -26,6 +28,6 @@ export function ProductCard({
         <CardContent></CardContent>
         <CardFooter></CardFooter>
       </Card>
-    </a>
+    </Link>
   )
 }

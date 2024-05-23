@@ -1,5 +1,7 @@
 import { siteConfig } from "@/config/site"
 
+import { Link } from "react-router-dom"
+
 import { Button, type ButtonProps } from "@/components/ui/button"
 
 import { cn } from "@/lib/utils"
@@ -11,7 +13,7 @@ export function HeaderLogo({
   ...props
 }: Readonly<ButtonProps>): JSX.Element {
   return (
-    <a href="/">
+    <Link to="/">
       <Button
         variant="link"
         className={cn("gap-1.5 px-0", className)}
@@ -23,6 +25,6 @@ export function HeaderLogo({
         </span>
         <span className="sr-only">Home Page</span>
       </Button>
-    </a>
+    </Link>
   )
 }

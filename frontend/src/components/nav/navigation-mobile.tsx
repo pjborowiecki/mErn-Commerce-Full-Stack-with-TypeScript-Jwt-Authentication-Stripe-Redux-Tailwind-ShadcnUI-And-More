@@ -1,6 +1,7 @@
 import { siteConfig } from "@/config/site"
 
 import * as React from "react"
+import { Link } from "react-router-dom"
 
 // import { useLocation } from "react-router-dom"
 import type { NavLink } from "@/types"
@@ -77,15 +78,15 @@ export function NavigationMobile({
       </SheetTrigger>
       <SheetContent side="left" className="pl-1 pr-0 pt-9">
         <div className="w-full px-7">
-          <a
-            href="/"
+          <Link
+            to="/"
             onClick={() => setIsOpen(false)}
             className="flex items-center justify-center gap-1.5"
           >
             <Icons.logo aria-hidden="true" className="size-6" />
             <span className="font-bold">{siteConfig.name}</span>
             <span className="sr-only">Home Page</span>
-          </a>
+          </Link>
         </div>
         <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
           <div className="pl-1 pr-7">

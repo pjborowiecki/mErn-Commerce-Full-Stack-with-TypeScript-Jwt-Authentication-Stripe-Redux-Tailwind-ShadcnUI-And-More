@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 import type { NavLink } from "@/types"
 
 import {
@@ -25,10 +27,9 @@ export function Navigation({ navLinks }: NavigationProps): JSX.Element {
           {navLinks.map((link) => (
             <NavigationMenuItem key={link.label} asChild>
               <NavigationMenuLink
-                href={link.href}
                 className={cn(navigationMenuTriggerStyle(), "bg-transparent")}
               >
-                {link.label}
+                <Link to={link.href}>{link.label}</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
           ))}

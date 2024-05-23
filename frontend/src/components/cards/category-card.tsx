@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 import type { DummyCategory } from "@/types"
 
 import {
@@ -18,8 +20,8 @@ export function CategoryCard({
   category,
 }: Readonly<CategoryCardProps>): JSX.Element {
   return (
-    <a
-      href={`/categories/${slugify(category.name)}`}
+    <Link
+      to={`/categories/${slugify(category.name)}`}
       aria-label={category.name}
     >
       <Card>
@@ -29,6 +31,6 @@ export function CategoryCard({
         <CardContent></CardContent>
         <CardFooter></CardFooter>
       </Card>
-    </a>
+    </Link>
   )
 }

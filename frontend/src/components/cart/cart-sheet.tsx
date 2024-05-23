@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 import { Button, type ButtonProps } from "@/components/ui/button"
 
 import { cn } from "@/lib/utils"
@@ -9,7 +11,7 @@ export function CartSheet({
   ...props
 }: Readonly<ButtonProps>): JSX.Element {
   return (
-    <a href="/cart" className="rounded-full">
+    <Link to="/cart" className="rounded-full">
       <Button
         variant="ghost"
         className={cn("size-8 rounded-full px-0", className)}
@@ -18,6 +20,6 @@ export function CartSheet({
       >
         <Icons.shoppingCart className="size-[34px] rounded-full" />
       </Button>
-    </a>
+    </Link>
   )
 }
