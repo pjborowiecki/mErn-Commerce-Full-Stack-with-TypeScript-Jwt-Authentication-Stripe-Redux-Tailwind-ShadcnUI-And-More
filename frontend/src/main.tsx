@@ -12,8 +12,10 @@ import {
 import { ThemeProvider } from "@/providers/theme-provider"
 
 import { HomePage } from "@/pages/home-page"
+import { AuthLayout } from "@/pages/layouts/auth-layout"
 import { MainLayout } from "@/pages/layouts/main-layout"
 import { NotFoundPage } from "@/pages/not-found-page"
+import { ProductPage } from "@/pages/product-page"
 import { SignInPage } from "@/pages/signin-page"
 import { SignUpPage } from "@/pages/signup-page"
 
@@ -25,8 +27,11 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<MainLayout />}>
       <Route index element={<HomePage />} />
-      <Route path="signin" element={<SignInPage />} />
-      <Route path="signup" element={<SignUpPage />} />
+      <Route path="/products/:id" element={<ProductPage />} />
+
+      <Route path="/signin" element={<SignInPage />} />
+      <Route path="/signup" element={<SignUpPage />} />
+
       <Route path="*" element={<NotFoundPage />} />
     </Route>
   )

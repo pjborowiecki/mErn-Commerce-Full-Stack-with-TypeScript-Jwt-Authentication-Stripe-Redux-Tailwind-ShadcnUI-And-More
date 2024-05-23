@@ -11,7 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-import { formatPrice, slugify } from "@/lib/utils"
+import { formatPrice } from "@/lib/utils"
 
 import { Rating } from "@/components/rating"
 
@@ -23,7 +23,7 @@ export function ProductCard({
   product,
 }: Readonly<ProductCardProps>): JSX.Element {
   return (
-    <Link to={`/products/${slugify(product.name)}`} aria-label={product.name}>
+    <Link to={`/products/${product.id}`} aria-label={product.name}>
       <Card className="rounded-md bg-accent/20 hover:bg-accent/60">
         <CardHeader>
           <CardTitle>{product.name}</CardTitle>

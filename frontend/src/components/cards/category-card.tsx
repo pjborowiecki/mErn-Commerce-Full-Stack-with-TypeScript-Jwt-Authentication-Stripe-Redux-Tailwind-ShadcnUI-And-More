@@ -10,8 +10,6 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-import { slugify } from "@/lib/utils"
-
 interface CategoryCardProps {
   category: DummyCategory
 }
@@ -20,10 +18,7 @@ export function CategoryCard({
   category,
 }: Readonly<CategoryCardProps>): JSX.Element {
   return (
-    <Link
-      to={`/categories/${slugify(category.name)}`}
-      aria-label={category.name}
-    >
+    <Link to={`/categories/${category.id}`} aria-label={category.name}>
       <Card className="rounded-md bg-accent/20 hover:bg-accent/60">
         <CardHeader>
           <CardTitle>{category.name}</CardTitle>
