@@ -17,6 +17,7 @@
     "type": "git",
     "url": "https://github.com/pjborowiecki/mErn-Commerce-Full-Stack-with-TypeScript-Jwt-Authentication-Stripe-Redux-Tailwind-ShadcnUI-And-More/Issues"
   },
+  "proxy": "http://localhost:4000",
   "scripts": {
     "dev": "vite --port 3000",
     "build": "tsc && vite build",

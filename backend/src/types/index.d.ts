@@ -43,7 +43,7 @@ export interface UpdateCurrentUserRequestBody {
 }
 
 export interface DummyProduct {
-  id: string
+  _id: string
   name: string
   description: string
   image: string

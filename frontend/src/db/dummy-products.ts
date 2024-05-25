@@ -1,4 +1,4 @@
-import type { DummyProduct } from "@/types"
+import type { Product } from "@/types"
 
 export const dummyProducts = [
   {
@@ -545,4 +545,4 @@ export const dummyProducts = [
     rating: 4.4,
     numReviews: 6,
   },
-] satisfies DummyProduct[]
+] satisfies Product[]

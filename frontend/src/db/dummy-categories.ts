@@ -2,32 +2,32 @@ import type { DummyCategory } from "@/types"
 
 export const dummyCategories = [
   {
-    id: "1",
+    _id: "1",
     name: "Cameras",
   },
   {
-    id: "2",
+    _id: "2",
     name: "Lenses",
   },
   {
-    id: "3",
+    _id: "3",
     name: "Accessories",
   },
   {
-    id: "4",
+    _id: "4",
     name: "Parts",
   },
   {
-    id: "5",
+    _id: "5",
     name: "Books",
   },
 
   {
-    id: "6",
+    _id: "6",
     name: "Magazines",
   },
   {
-    id: "7",
+    _id: "7",
     name: "Postcards",
   },
 ] satisfies DummyCategory[]

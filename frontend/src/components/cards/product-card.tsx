@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-import type { DummyProduct } from "@/types"
+import type { Product } from "@/types"
 
 import {
   Card,
@@ -16,14 +16,14 @@ import { formatPrice } from "@/lib/utils"
 import { Rating } from "@/components/rating"
 
 interface ProductCardProps {
-  product: DummyProduct
+  product: Product
 }
 
 export function ProductCard({
   product,
 }: Readonly<ProductCardProps>): JSX.Element {
   return (
-    <Link to={`/products/${product.id}`} aria-label={product.name}>
+    <Link to={`/products/${product._id}`} aria-label={product.name}>
       <Card className="rounded-md bg-accent/20 hover:bg-accent/60">
         <CardHeader>
           <CardTitle>{product.name}</CardTitle>

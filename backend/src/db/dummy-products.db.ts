@@ -2,7 +2,7 @@ import type { DummyProduct } from "../types"
 
 export const dummyProducts = [
   {
-    id: "1",
+    _id: "1",
     name: "Pentax K1000",
     description:
       "The Pentax K1000 is a 35 mm single-lens reflex camera, launched in 1976 by Asahi Optical Co., Ltd.",
@@ -15,7 +15,7 @@ export const dummyProducts = [
     numReviews: 12,
   },
   {
-    id: "2",
+    _id: "2",
     name: "Olympus OM-1",
     description:
       "The Olympus OM-1 is a single-lens reflex camera introduced in 1972.",
@@ -28,7 +28,7 @@ export const dummyProducts = [
     numReviews: 10,
   },
   {
-    id: "3",
+    _id: "3",
     name: "Minolta X-700",
     description:
       "The Minolta X-700 is a 35 mm single-lens reflex film camera introduced by Minolta in 1981.",
@@ -41,7 +41,7 @@ export const dummyProducts = [
     numReviews: 8,
   },
   {
-    id: "4",
+    _id: "4",
     name: "Yashica Electro 35",
     description:
       "The Yashica Electro 35 is a rangefinder camera made by Yashica.",
@@ -54,7 +54,7 @@ export const dummyProducts = [
     numReviews: 9,
   },
   {
-    id: "5",
+    _id: "5",
     name: "Canon A-1",
     description:
       "The Canon A-1 is a 35 mm single-lens reflex camera that was introduced by Canon in 1978.",
@@ -67,7 +67,7 @@ export const dummyProducts = [
     numReviews: 11,
   },
   {
-    id: "6",
+    _id: "6",
     name: "Nikon FM2",
     description:
       "The Nikon FM2 is an advanced semi-professional, interchangeable lens, 35 mm film, single-lens reflex (SLR) camera.",
@@ -80,7 +80,7 @@ export const dummyProducts = [
     numReviews: 13,
   },
   {
-    id: "7",
+    _id: "7",
     name: "Leica M3",
     description:
       "The Leica M3 is a 35 mm rangefinder camera by Ernst Leitz GmbH, introduced in 1954.",
@@ -93,7 +93,7 @@ export const dummyProducts = [
     numReviews: 15,
   },
   {
-    id: "8",
+    _id: "8",
     name: "Kodak Retina IIa",
     description:
       "The Retina IIa is a 35mm viewfinder camera made by Kodak AG in Germany.",
@@ -106,7 +106,7 @@ export const dummyProducts = [
     numReviews: 7,
   },
   {
-    id: "9",
+    _id: "9",
     name: "Polaroid SX-70",
     description:
       "The Polaroid SX-70 is a folding single lens reflex Land camera which was produced by Polaroid Corporation from 1972 to 1981.",
@@ -119,7 +119,7 @@ export const dummyProducts = [
     numReviews: 10,
   },
   {
-    id: "10",
+    _id: "10",
     name: "Rolleiflex 2.8F",
     description:
       "The Rolleiflex 2.8F is a twin-lens reflex camera made by Rollei.",
@@ -132,7 +132,7 @@ export const dummyProducts = [
     numReviews: 14,
   },
   {
-    id: "11",
+    _id: "11",
     name: "Zeiss Ikon Contax II",
     description:
       "The Zeiss Ikon Contax II is a 35mm rangefinder camera built by Zeiss Ikon from 1936 to 1942.",
@@ -145,7 +145,7 @@ export const dummyProducts = [
     numReviews: 12,
   },
   {
-    id: "12",
+    _id: "12",
     name: "Voigtländer Bessa",
     description:
       "The Voigtländer Bessa is a line of medium format and 35mm film cameras manufactured by Voigtländer.",
@@ -158,7 +158,7 @@ export const dummyProducts = [
     numReviews: 9,
   },
   {
-    id: "13",
+    _id: "13",
     name: "Argus C3",
     description:
       "The Argus C3 is a 35mm film rangefinder camera manufactured by Argus.",
@@ -171,7 +171,7 @@ export const dummyProducts = [
     numReviews: 8,
   },
   {
-    id: "14",
+    _id: "14",
     name: "Konica Auto S3",
     description:
       "The Konica Auto S3 is a 35mm fixed-lens, leaf-shuttered, rangefinder camera.",
@@ -184,7 +184,7 @@ export const dummyProducts = [
     numReviews: 11,
   },
   {
-    id: "15",
+    _id: "15",
     name: "Ansel Adams: 400 Photographs",
     description:
       "A collection of iconic photographs by Ansel Adams, showcasing his mastery of black-and-white landscape photography.",
@@ -197,7 +197,7 @@ export const dummyProducts = [
     numReviews: 30,
   },
   {
-    id: "16",
+    _id: "16",
     name: "Understanding Exposure",
     description:
       "A comprehensive guide to understanding exposure in photography, covering aperture, shutter speed, and ISO.",
@@ -210,7 +210,7 @@ export const dummyProducts = [
     numReviews: 25,
   },
   {
-    id: "17",
+    _id: "17",
     name: "The Camera",
     description:
       "A classic photography book exploring the history and technical aspects of the camera.",
@@ -223,7 +223,7 @@ export const dummyProducts = [
     numReviews: 20,
   },
   {
-    id: "18",
+    _id: "18",
     name: "Magnum Contact Sheets",
     description:
       "A fascinating look at the contact sheets of Magnum photographers, revealing the process behind iconic images.",
@@ -236,7 +236,7 @@ export const dummyProducts = [
     numReviews: 18,
   },
   {
-    id: "19",
+    _id: "19",
     name: "Camera Shoulder Strap",
     description: "Adjustable vintage leather camera shoulder strap.",
     image: "/images/camera-shoulder-strap.jpg",
@@ -248,7 +248,7 @@ export const dummyProducts = [
     numReviews: 15,
   },
   {
-    id: "20",
+    _id: "20",
     name: "Camera Lens Cleaning Kit",
     description:
       "Professional camera lens cleaning kit with lens cleaner, brush, and microfiber cloth.",
@@ -261,7 +261,7 @@ export const dummyProducts = [
     numReviews: 12,
   },
   {
-    id: "21",
+    _id: "21",
     name: "Camera Tripod",
     description: "Aluminum camera tripod with adjustable legs and ball head.",
     image: "/images/camera-tripod.jpg",
@@ -273,7 +273,7 @@ export const dummyProducts = [
     numReviews: 18,
   },
   {
-    id: "22",
+    _id: "22",
     name: "Camera Bag",
     description:
       "Vintage canvas camera bag with padded interior and adjustable dividers.",
@@ -286,7 +286,7 @@ export const dummyProducts = [
     numReviews: 20,
   },
   {
-    id: "23",
+    _id: "23",
     name: "Life Magazine",
     description:
       "An iconic weekly news magazine known for its stunning photojournalism, published from 1936 to 1972.",
@@ -299,7 +299,7 @@ export const dummyProducts = [
     numReviews: 15,
   },
   {
-    id: "24",
+    _id: "24",
     name: "National Geographic Magazine",
     description:
       "A renowned monthly magazine showcasing the world's wonders through captivating photography, founded in 1888.",
@@ -312,7 +312,7 @@ export const dummyProducts = [
     numReviews: 12,
   },
   {
-    id: "25",
+    _id: "25",
     name: "Popular Photography",
     description:
       "A popular photography magazine providing tips, techniques, and gear reviews, published from 1937 to 2017.",
@@ -325,7 +325,7 @@ export const dummyProducts = [
     numReviews: 10,
   },
   {
-    id: "26",
+    _id: "26",
     name: "Vintage Travel Postcards",
     description:
       "A collection of vintage travel postcards featuring scenic destinations from around the world.",
@@ -338,7 +338,7 @@ export const dummyProducts = [
     numReviews: 18,
   },
   {
-    id: "27",
+    _id: "27",
     name: "Vintage Portrait Postcards",
     description:
       "A set of vintage portrait postcards featuring classic portraits from the early 20th century.",
@@ -351,7 +351,7 @@ export const dummyProducts = [
     numReviews: 14,
   },
   {
-    id: "28",
+    _id: "28",
     name: "Vintage City Postcards",
     description:
       "A collection of vintage city postcards showcasing urban scenes from the past century.",
@@ -364,7 +364,7 @@ export const dummyProducts = [
     numReviews: 16,
   },
   {
-    id: "29",
+    _id: "29",
     name: "Carl Zeiss Jena Biotar 58mm f/2",
     description:
       "A classic vintage lens known for its unique bokeh rendering and sharpness.",
@@ -377,7 +377,7 @@ export const dummyProducts = [
     numReviews: 10,
   },
   {
-    id: "30",
+    _id: "30",
     name: "Nikkor-S Auto 50mm f/1.4",
     description:
       "A fast prime lens with excellent low-light performance, ideal for portrait and street photography.",
@@ -390,7 +390,7 @@ export const dummyProducts = [
     numReviews: 8,
   },
   {
-    id: "31",
+    _id: "31",
     name: "Leitz Summicron 50mm f/2",
     description:
       "A legendary lens renowned for its optical quality and craftsmanship, compatible with Leica M-mount cameras.",
@@ -403,7 +403,7 @@ export const dummyProducts = [
     numReviews: 6,
   },
   {
-    id: "32",
+    _id: "32",
     name: "Canon FL 55mm f/1.2",
     description:
       "A fast standard lens with a wide aperture, suitable for low-light shooting and creating shallow depth of field.",
@@ -416,7 +416,7 @@ export const dummyProducts = [
     numReviews: 7,
   },
   {
-    id: "33",
+    _id: "33",
     name: "Voigtländer Nokton 35mm f/1.4",
     description:
       "A high-speed lens with excellent image quality and a versatile focal length, compatible with Leica M-mount cameras.",
@@ -429,7 +429,7 @@ export const dummyProducts = [
     numReviews: 9,
   },
   {
-    id: "34",
+    _id: "34",
     name: "Minolta Shutter Release Cable",
     description:
       "A vintage shutter release cable designed for Minolta film cameras, allowing remote shutter activation.",
@@ -442,7 +442,7 @@ export const dummyProducts = [
     numReviews: 5,
   },
   {
-    id: "35",
+    _id: "35",
     name: "Pentax Shutter Release Cable",
     description:
       "A classic shutter release cable compatible with Pentax SLR cameras, providing smooth and precise shutter operation.",
@@ -455,7 +455,7 @@ export const dummyProducts = [
     numReviews: 4,
   },
   {
-    id: "36",
+    _id: "36",
     name: "Canon Shutter Release Cable",
     description:
       "An original shutter release cable for Canon FD-mount cameras, offering reliable remote shutter control.",
@@ -468,7 +468,7 @@ export const dummyProducts = [
     numReviews: 7,
   },
   {
-    id: "37",
+    _id: "37",
     name: "Nikon Hot Shoe Cover",
     description:
       "A vintage hot shoe cover designed for Nikon SLR cameras, protecting the hot shoe from dust and moisture.",
@@ -481,7 +481,7 @@ export const dummyProducts = [
     numReviews: 3,
   },
   {
-    id: "38",
+    _id: "38",
     name: "Canon Hot Shoe Cover",
     description:
       "An original hot shoe cover for Canon EOS cameras, preventing dirt and debris from entering the hot shoe.",
@@ -494,7 +494,7 @@ export const dummyProducts = [
     numReviews: 2,
   },
   {
-    id: "39",
+    _id: "39",
     name: "Leica Hot Shoe Cover",
     description:
       "A classic hot shoe cover compatible with Leica M-series cameras, featuring a minimalist design.",
@@ -507,7 +507,7 @@ export const dummyProducts = [
     numReviews: 4,
   },
   {
-    id: "40",
+    _id: "40",
     name: "Leica M Lens Hood",
     description:
       "A vintage metal lens hood designed for Leica M-mount lenses, providing shade and reducing lens flare.",
@@ -520,7 +520,7 @@ export const dummyProducts = [
     numReviews: 10,
   },
   {
-    id: "41",
+    _id: "41",
     name: "Nikon F Lens Hood",
     description:
       "A classic lens hood compatible with Nikon F-mount lenses, helping to block stray light and protect the lens.",
@@ -533,7 +533,7 @@ export const dummyProducts = [
     numReviews: 8,
   },
   {
-    id: "42",
+    _id: "42",
     name: "Canon FD Lens Hood",
     description:
       "An original lens hood designed for Canon FD-mount lenses, reducing lens flare and improving contrast.",

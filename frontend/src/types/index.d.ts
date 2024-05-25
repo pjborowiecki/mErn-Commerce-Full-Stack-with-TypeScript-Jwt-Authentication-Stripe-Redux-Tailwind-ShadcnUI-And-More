@@ -12,8 +12,8 @@ export interface User {
   image: string | null
 }
 
-export interface DummyProduct {
-  id: string
+export interface Product {
+  _id: string
   name: string
   description: string
   image: string
@@ -26,6 +26,6 @@ export interface DummyProduct {
 }
 
 export interface DummyCategory {
-  id: string
+  _id: string
   name: string
 }
